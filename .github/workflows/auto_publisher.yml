@@ -1,0 +1,36 @@
+name: PawGadgetHub Auto Publisher
+
+on:
+  schedule:
+    # Runs everyday at 14:00 UTC (9:00 AM EST / 6:00 AM PST - peak US morning traffic)
+    - cron: '0 14 * * *'
+  workflow_dispatch: # Allows manual trigger anytime from GitHub UI
+
+jobs:
+  publish-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Run Next Auto Post
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: |
+          python3 automation_engine.py --run-one
+
+      - name: Commit and Push Updated Keywords Queue
+        run: |
+          git config --global user.name "PawGadgetBot"
+          git config --global user.email "bot@pawgadgethub.com"
+          git add keywords.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-published post [skip ci]" && git push)
