@@ -407,10 +407,19 @@ def generate_and_post_single(item_id=None, status="publish"):
                 target_item = kw
                 break
     else:
+        # Strictly prioritize pending posts where 100% of reviewed products have active shortlinks
         for kw in keywords:
             if kw.get("status") == "pending":
-                target_item = kw
-                break
+                prods = kw.get("reviewed_products", [])
+                if prods and all("link.amazon" in p.get("affiliate_url", "") or "amzn.to" in p.get("affiliate_url", "") for p in prods):
+                    target_item = kw
+                    break
+        # Fallback to next pending in queue
+        if not target_item:
+            for kw in keywords:
+                if kw.get("status") == "pending":
+                    target_item = kw
+                    break
                 
     if not target_item:
         print("[Notice] No pending keywords found in queue.")
