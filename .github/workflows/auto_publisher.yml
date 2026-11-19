@@ -2,8 +2,8 @@ name: PawGadgetHub Auto Publisher
 
 on:
   schedule:
-    # Runs everyday at 14:00 UTC (9:00 AM EST / 6:00 AM PST - peak US morning traffic)
-    - cron: '0 14 * * *'
+    # Runs twice a day: 02:00 UTC (9:00 PM EST / 7:30 AM IST) & 14:00 UTC (9:00 AM EST / 7:30 PM IST)
+    - cron: '0 2,14 * * *'
   workflow_dispatch: # Allows manual trigger anytime from GitHub UI
 
 jobs:

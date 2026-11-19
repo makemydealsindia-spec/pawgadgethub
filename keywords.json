@@ -1037,5 +1037,1025 @@
         "affiliate_url": "https://link.amazon/B0bkWPI0V"
       }
     ]
+  },
+  {
+    "id": 31,
+    "keyword": "best automatic cat feeder for two cats separate bowls",
+    "category": "Smart Feeders",
+    "category_id": 2,
+    "intent": "commercial",
+    "search_volume_us": 1600,
+    "difficulty": "Low (19)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Petlibro Granary WiFi Dual Feeder with Two Bowls",
+        "asin": "B0B5ZJS7XC",
+        "best_for": "Even split feeding with individual stainless bowls",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B0B5ZJS7XC?tag=pawgadgethub-20"
+      },
+      {
+        "name": "HoneyGuaridan A36 Dual Automatic Pet Feeder",
+        "asin": "B087HH623N",
+        "best_for": "Budget two-cat portion splitter",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B087HH623N?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Wellturn Two-Way Splitter Pet Feeder",
+        "asin": "B0CG5FMD3P",
+        "best_for": "Meal separator for dry kibble",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B0CG5FMD3P?tag=pawgadgethub-20"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "keyword": "automatic dog feeder for large dogs 50 lbs and up",
+    "category": "Smart Feeders",
+    "category_id": 2,
+    "intent": "commercial",
+    "search_volume_us": 1400,
+    "difficulty": "Low (21)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "PetSafe Healthy Pet Simply Feed 24-Cup",
+        "asin": "B00VIXRB6O",
+        "best_for": "Heavy-duty conveyor for large kibble shapes",
+        "msrp": ".95",
+        "affiliate_url": "https://www.amazon.com/dp/B00VIXRB6O?tag=pawgadgethub-20"
+      },
+      {
+        "name": "WOPET 7L Large Automatic Dog Feeder",
+        "asin": "B089GG57QL",
+        "best_for": "Big capacity hopper for big appetites",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B089GG57QL?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Dogness 9L Smart Large Dog Feeder",
+        "asin": "B085VLS1V5",
+        "best_for": "Jumbo size dry kibble dispenser",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B085VLS1V5?tag=pawgadgethub-20"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "keyword": "smart cat feeder with camera and two way audio",
+    "category": "Smart Feeders",
+    "category_id": 2,
+    "intent": "commercial",
+    "search_volume_us": 2100,
+    "difficulty": "Medium (28)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Petlibro Granary Camera Smart Feeder 1080p",
+        "asin": "B09S8WMJY9",
+        "best_for": "Crisp HD streaming and two-way talk",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B09S8WMJY9?tag=pawgadgethub-20"
+      },
+      {
+        "name": "WOPET Smart Vision HD Pet Feeder Cam",
+        "asin": "B0855N79G4",
+        "best_for": "Night vision checking and meal calling",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B0855N79G4?tag=pawgadgethub-20"
+      },
+      {
+        "name": "PETKIT Fresh Element Solo Smart Dispenser",
+        "asin": "B09N8V8X4W",
+        "best_for": "Modern minimalist feeding monitoring",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B09N8V8X4W?tag=pawgadgethub-20"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "keyword": "automatic cat feeder that prevents ants and bugs",
+    "category": "Smart Feeders",
+    "category_id": 2,
+    "intent": "commercial",
+    "search_volume_us": 1200,
+    "difficulty": "Low (17)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "SureFeed Microchip Sealed Pet Feeder",
+        "asin": "B00O0UIPTY",
+        "best_for": "Hermetically rubber-sealed bowl lid keeps bugs out",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B05L4wIQE"
+      },
+      {
+        "name": "Cat Mate C500 5-Meal Rotating Feeder with Ice Packs",
+        "asin": "B003L4V14S",
+        "best_for": "Recessed covered tray prevents ant entry",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B0fNZTUOj"
+      },
+      {
+        "name": "Petlibro Granary Triple-Seal Feeder",
+        "asin": "B09S8WMJY9",
+        "best_for": "Desiccant sealed rotor prevents pests",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B09S8WMJY9?tag=pawgadgethub-20"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "keyword": "battery operated automatic timed feeder for vacations",
+    "category": "Smart Feeders",
+    "category_id": 2,
+    "intent": "commercial",
+    "search_volume_us": 1500,
+    "difficulty": "Low (18)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Cat Mate C500 Digital 5-Meal Feeder",
+        "asin": "B003L4V14S",
+        "best_for": "Pure battery operation with twin ice pack cooling",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B0fNZTUOj"
+      },
+      {
+        "name": "PetSafe 5-Meal Pet Feeder",
+        "asin": "B075WYNNFL",
+        "best_for": "Simple battery clock mechanism that never fails",
+        "msrp": ".95",
+        "affiliate_url": "https://link.amazon/B06XFQlAu"
+      },
+      {
+        "name": "Petlibro Granary Air Battery Backup Feeder",
+        "asin": "B09S8WMJY9",
+        "best_for": "Up to 180 days on 3 D-cell backup batteries",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B09S8WMJY9?tag=pawgadgethub-20"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "keyword": "whisker fatigue friendly automatic cat feeder bowls",
+    "category": "Smart Feeders",
+    "category_id": 2,
+    "intent": "commercial",
+    "search_volume_us": 1100,
+    "difficulty": "Low (15)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Petlibro Granary Stainless Steel Wide Bowl Feeder",
+        "asin": "B0B5ZJS7XC",
+        "best_for": "Shallow ergonomic food pan",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B0B5ZJS7XC?tag=pawgadgethub-20"
+      },
+      {
+        "name": "SureFeed Microchip Feeder with Split Bowl",
+        "asin": "B00O0UIPTY",
+        "best_for": "Wide shallow access rim for sensitive whiskers",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B05L4wIQE"
+      },
+      {
+        "name": "Cat Mate C500 Shallow Trays",
+        "asin": "B003L4V14S",
+        "best_for": "Broad rounded plate design",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B0fNZTUOj"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "keyword": "best cat GPS tracker collar lightweight breakaway",
+    "category": "GPS & Trackers",
+    "category_id": 3,
+    "intent": "commercial",
+    "search_volume_us": 2400,
+    "difficulty": "Medium (26)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Tractive GPS Cat 4 LTE Tracker",
+        "asin": "B09FGF43T5",
+        "best_for": "Live tracking with safe breakaway collar band",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B09FGF43T5?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Weenect XS Cat GPS Collar",
+        "asin": "B0BHY599M1",
+        "best_for": "Ultra-compact featherweight form factor",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B08MZM3Zi"
+      },
+      {
+        "name": "Tabcat v2 Pet Tracking Cat Homing Device",
+        "asin": "B0716X9X5K",
+        "best_for": "Zero subscription RF locator tag",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B0716X9X5K?tag=pawgadgethub-20"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "keyword": "GPS dog collar with escape alerts and virtual fence",
+    "category": "GPS & Trackers",
+    "category_id": 3,
+    "intent": "commercial",
+    "search_volume_us": 2800,
+    "difficulty": "Medium (29)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Fi Series 3 Smart Dog Collar",
+        "asin": "B0BF76N9M6",
+        "best_for": "Instant escape notification and armored stainless build",
+        "msrp": ".00",
+        "affiliate_url": "https://link.amazon/B0jel7gWj"
+      },
+      {
+        "name": "Tractive GPS Dog 4 Waterproof Tracker",
+        "asin": "B08MC58X9H",
+        "best_for": "Custom geofence boundaries with safe zone alerts",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B08MC58X9H?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Halo Collar 3 Wireless GPS Fence",
+        "asin": "B0CL7X6KMD",
+        "best_for": "Autonomous containment without underground wires",
+        "msrp": ".00",
+        "affiliate_url": "https://www.amazon.com/dp/B0CL7X6KMD?tag=pawgadgethub-20"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "keyword": "best off grid GPS dog tracking collar for backcountry hiking",
+    "category": "GPS & Trackers",
+    "category_id": 3,
+    "intent": "commercial",
+    "search_volume_us": 1700,
+    "difficulty": "Low (22)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Garmin TT 15X Dog GPS Tracking Device",
+        "asin": "B09SH781NZ",
+        "best_for": "High-sensitivity VHF satellite tracking up to 9 miles",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B09SH781NZ?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Garmin Alpha 10 Bundle with T5 Mini",
+        "asin": "B09CS5N3LQ",
+        "best_for": "Standalone handheld mapping without cell towers",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B09CS5N3LQ?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Tracki GPS Tracker for Dogs",
+        "asin": "B07N4DHFZM",
+        "best_for": "Compact companion backup tracker",
+        "msrp": ".88",
+        "affiliate_url": "https://www.amazon.com/dp/B07N4DHFZM?tag=pawgadgethub-20"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "keyword": "rechargeable GPS pet tracker with longest battery life",
+    "category": "GPS & Trackers",
+    "category_id": 3,
+    "intent": "commercial",
+    "search_volume_us": 1500,
+    "difficulty": "Low (20)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Fi Series 3 Smart Dog Collar",
+        "asin": "B0BF76N9M6",
+        "best_for": "Up to 3 months battery life between wireless charges",
+        "msrp": ".00",
+        "affiliate_url": "https://link.amazon/B0jel7gWj"
+      },
+      {
+        "name": "Tractive GPS Dog 4 Tracker",
+        "asin": "B08MC58X9H",
+        "best_for": "Power saving zones extending runtime up to 10 days",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B08MC58X9H?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Pawfit Lite GPS Pet Tracker",
+        "asin": "B0CG9KMXBH",
+        "best_for": "Extended standby power management",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B08xbRIgM"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "keyword": "waterproof pet tracker collar for swimming dogs",
+    "category": "GPS & Trackers",
+    "category_id": 3,
+    "intent": "commercial",
+    "search_volume_us": 1300,
+    "difficulty": "Low (17)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Tractive GPS Dog 4 100% Waterproof IPX7",
+        "asin": "B08MC58X9H",
+        "best_for": "Submersible waterproof rating for lake and river swims",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B08MC58X9H?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Fi Series 3 Smart Collar IP68",
+        "asin": "B0BF76N9M6",
+        "best_for": "Dive-proof 30-minute submersion up to 1.5 meters",
+        "msrp": ".00",
+        "affiliate_url": "https://link.amazon/B0jel7gWj"
+      },
+      {
+        "name": "Apple AirTag 4-Pack with Waterproof Dog Collar Mount",
+        "asin": "B0933BVK6T",
+        "best_for": "Budget waterproof tag solution",
+        "msrp": ".00",
+        "affiliate_url": "https://link.amazon/B07LUnizT"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "keyword": "best cellular LTE pet tracker for rural areas",
+    "category": "GPS & Trackers",
+    "category_id": 3,
+    "intent": "commercial",
+    "search_volume_us": 1400,
+    "difficulty": "Low (21)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Tractive GPS Dog 4 Multi-Network LTE",
+        "asin": "B08MC58X9H",
+        "best_for": "Roams across AT&T, T-Mobile, and Verizon towers automatically",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B08MC58X9H?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Tracki 4G LTE GPS Tracker",
+        "asin": "B07N4DHFZM",
+        "best_for": "Broad international and rural cellular connectivity",
+        "msrp": ".88",
+        "affiliate_url": "https://www.amazon.com/dp/B07N4DHFZM?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Garmin TT 15X Dog GPS Tracking Device",
+        "asin": "B09SH781NZ",
+        "best_for": "Non-cellular satellite VHF backup when towers fail",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B09SH781NZ?tag=pawgadgethub-20"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "keyword": "best 360 degree rotating pet camera for dogs home alone",
+    "category": "Pet Cameras",
+    "category_id": 4,
+    "intent": "commercial",
+    "search_volume_us": 2600,
+    "difficulty": "Medium (27)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Furbo 360 Dog Camera",
+        "asin": "B09XF8655N",
+        "best_for": "Full room 360 pan view with treat throwing mechanism",
+        "msrp": ".00",
+        "affiliate_url": "https://link.amazon/B01GJiWMs"
+      },
+      {
+        "name": "Wyze Cam Pan v3 Indoor/Outdoor Pan Tilt",
+        "asin": "B0B9TWC89V",
+        "best_for": "Ultra affordable 360 pan and motion tracking patrol",
+        "msrp": ".98",
+        "affiliate_url": "https://link.amazon/B0diaKvAk"
+      },
+      {
+        "name": "Eufy Security Indoor Cam S350 4K Dual Cam",
+        "asin": "B0C6L7V6TN",
+        "best_for": "Dual lens 4K clarity with 360 motorized pan",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B003fe0FL"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "keyword": "best pet camera with barking alert and sound detection",
+    "category": "Pet Cameras",
+    "category_id": 4,
+    "intent": "commercial",
+    "search_volume_us": 1800,
+    "difficulty": "Low (23)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Furbo 360 Dog Camera with Real-Time Barking Alerts",
+        "asin": "B09XF8655N",
+        "best_for": "AI acoustic bark and whine detection push alerts",
+        "msrp": ".00",
+        "affiliate_url": "https://link.amazon/B01GJiWMs"
+      },
+      {
+        "name": "Petcube Bites 2 Lite HD Treat Camera",
+        "asin": "B09F6HFF4N",
+        "best_for": "Barking and meow sound notification triggers",
+        "msrp": ".95",
+        "affiliate_url": "https://www.amazon.com/dp/B09F6HFF4N?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Blink Mini 2 Indoor Camera",
+        "asin": "B0BWV857BJ",
+        "best_for": "Affordable motion and chime sound listener",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B00n1O2yZ"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "keyword": "interactive laser pet camera for cats home alone",
+    "category": "Pet Cameras",
+    "category_id": 4,
+    "intent": "commercial",
+    "search_volume_us": 1900,
+    "difficulty": "Low (21)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Enabot EBO Air Pet Robot with Laser Pointer",
+        "asin": "B09W2CY3F5",
+        "best_for": "Mobile rolling robot camera with auto cat laser play",
+        "msrp": ".00",
+        "affiliate_url": "https://www.amazon.com/dp/B09W2CY3F5?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Skymee Owl Robot Mobile Pet Camera",
+        "asin": "B07SQ2RCLH",
+        "best_for": "All-terrain interactive drive-around toy camera",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B07SQ2RCLH?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Petcube Bites 2 Lite",
+        "asin": "B09F6HFF4N",
+        "best_for": "Wall-mount interactive treat dispensing",
+        "msrp": ".95",
+        "affiliate_url": "https://www.amazon.com/dp/B09F6HFF4N?tag=pawgadgethub-20"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "keyword": "best dual lens pet camera for large living rooms",
+    "category": "Pet Cameras",
+    "category_id": 4,
+    "intent": "commercial",
+    "search_volume_us": 1300,
+    "difficulty": "Low (19)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Eufy Security Indoor Cam S350 4K Dual Cam",
+        "asin": "B0C6L7V6TN",
+        "best_for": "Wide angle + 3x telephoto zoom in one body",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B003fe0FL"
+      },
+      {
+        "name": "Wyze Cam Pan v3 Indoor/Outdoor Pan Tilt",
+        "asin": "B0B9TWC89V",
+        "best_for": "Wide field of view with rapid pan tracking",
+        "msrp": ".98",
+        "affiliate_url": "https://link.amazon/B0diaKvAk"
+      },
+      {
+        "name": "Furbo 360 Dog Camera",
+        "asin": "B09XF8655N",
+        "best_for": "Room-filling optical coverage with treat toss",
+        "msrp": ".00",
+        "affiliate_url": "https://link.amazon/B01GJiWMs"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "keyword": "night vision pet camera with clear two way talk",
+    "category": "Pet Cameras",
+    "category_id": 4,
+    "intent": "commercial",
+    "search_volume_us": 1700,
+    "difficulty": "Low (20)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Wyze Cam v4 with Color Night Vision",
+        "asin": "B0CS6TWR6D",
+        "best_for": "Starlight sensor night vision in vivid true color",
+        "msrp": ".98",
+        "affiliate_url": "https://link.amazon/B0i5XQERF"
+      },
+      {
+        "name": "Blink Mini 2 Indoor Camera",
+        "asin": "B0BWV857BJ",
+        "best_for": "Built-in LED spotlight and two-way audio talk",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B00n1O2yZ"
+      },
+      {
+        "name": "TP-Link Tapo C210 2K Pan/Tilt Security Cam",
+        "asin": "B09351C9X7",
+        "best_for": "Crisp infrared night illumination up to 30 feet",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B09351C9X7?tag=pawgadgethub-20"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "keyword": "wireless battery powered pet camera no cord",
+    "category": "Pet Cameras",
+    "category_id": 4,
+    "intent": "commercial",
+    "search_volume_us": 1600,
+    "difficulty": "Low (22)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Enabot EBO SE Rolling Robot Camera",
+        "asin": "B09R6V3CJM",
+        "best_for": "Cord-free motorized camera with self-charging dock",
+        "msrp": ".00",
+        "affiliate_url": "https://link.amazon/B07Qs21h8"
+      },
+      {
+        "name": "Blink Mini 2 Indoor Camera with Power Sync",
+        "asin": "B0BWV857BJ",
+        "best_for": "Compact versatile placement",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B00n1O2yZ"
+      },
+      {
+        "name": "Wyze Cam v4 Security Cam",
+        "asin": "B0CS6TWR6D",
+        "best_for": "Portable indoor monitoring",
+        "msrp": ".98",
+        "affiliate_url": "https://link.amazon/B0i5XQERF"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "keyword": "best self cleaning litter box for multiple cats odor free",
+    "category": "Self-Cleaning Litter Boxes",
+    "category_id": 5,
+    "intent": "commercial",
+    "search_volume_us": 3200,
+    "difficulty": "Medium (31)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Whisker Litter-Robot 4 Self-Cleaning Litter Box",
+        "asin": "B0CL5N5K29",
+        "best_for": "Sealed carbon filter waste drawer supporting up to 4 cats",
+        "msrp": ".00",
+        "affiliate_url": "https://link.amazon/B0003jySD"
+      },
+      {
+        "name": "PETKIT Pura Max Large Entry Automatic Litter Box",
+        "asin": "B0B5G8265J",
+        "best_for": "Built-in automated odor elimination spray",
+        "msrp": ".00",
+        "affiliate_url": "https://www.amazon.com/dp/B0B5G8265J?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Neakasa M1 Open-Top Self-Cleaning Litter Box",
+        "asin": "B0CJ4T6D9B",
+        "best_for": "Spacious open basin preventing scent concentration",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B08awVKHW"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "keyword": "open top self cleaning automatic litter box for timid cats",
+    "category": "Self-Cleaning Litter Boxes",
+    "category_id": 5,
+    "intent": "commercial",
+    "search_volume_us": 1800,
+    "difficulty": "Low (22)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Neakasa M1 Open-Top Automatic Litter Box",
+        "asin": "B0CJ4T6D9B",
+        "best_for": "Panoramic open-air design so nervous cats never feel trapped",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B08awVKHW"
+      },
+      {
+        "name": "PetSafe ScoopFree Smart Self-Cleaning Litter Box",
+        "asin": "B08M3J7XQH",
+        "best_for": "Open low-profile tray with automatic rake",
+        "msrp": ".95",
+        "affiliate_url": "https://link.amazon/B0iN9Sf1l"
+      },
+      {
+        "name": "Whisker Litter-Robot 4",
+        "asin": "B0CL5N5K29",
+        "best_for": "Large circular entrance with gentle cycle sensor",
+        "msrp": ".00",
+        "affiliate_url": "https://link.amazon/B0003jySD"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "keyword": "self cleaning litter box that works with any clumping litter",
+    "category": "Self-Cleaning Litter Boxes",
+    "category_id": 5,
+    "intent": "commercial",
+    "search_volume_us": 1900,
+    "difficulty": "Low (21)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Whisker Litter-Robot 4 Self-Cleaning Litter Box",
+        "asin": "B0CL5N5K29",
+        "best_for": "Universal sifting screen compatible with clay, plant, or silica litters",
+        "msrp": ".00",
+        "affiliate_url": "https://link.amazon/B0003jySD"
+      },
+      {
+        "name": "PETKIT Pura Max Large Entry",
+        "asin": "B0B5G8265J",
+        "best_for": "Honeycomb sieve compatible with tofu, bentonite, and mixed litters",
+        "msrp": ".00",
+        "affiliate_url": "https://www.amazon.com/dp/B0B5G8265J?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Neakasa M1 Open-Top Automatic Litter Box",
+        "asin": "B0CJ4T6D9B",
+        "best_for": "Tear-resistant silicone base works with any clumping substrate",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B08awVKHW"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "keyword": "best automatic crystal litter box with disposable trays",
+    "category": "Self-Cleaning Litter Boxes",
+    "category_id": 5,
+    "intent": "commercial",
+    "search_volume_us": 1500,
+    "difficulty": "Low (18)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "PetSafe ScoopFree Smart Self-Cleaning Litter Box",
+        "asin": "B08M3J7XQH",
+        "best_for": "Pre-filled crystal leak-proof trays with zero scooping",
+        "msrp": ".95",
+        "affiliate_url": "https://link.amazon/B0iN9Sf1l"
+      },
+      {
+        "name": "Whisker Litter-Robot 4",
+        "asin": "B0CL5N5K29",
+        "best_for": "Premium alternative with reusable drawer liners",
+        "msrp": ".00",
+        "affiliate_url": "https://link.amazon/B0003jySD"
+      },
+      {
+        "name": "Neakasa M1 Open-Top Automatic Litter Box",
+        "asin": "B0CJ4T6D9B",
+        "best_for": "Trash-bag pull seal waste removal",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B08awVKHW"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "keyword": "quiet self cleaning litter box under 40 decibels",
+    "category": "Self-Cleaning Litter Boxes",
+    "category_id": 5,
+    "intent": "commercial",
+    "search_volume_us": 1300,
+    "difficulty": "Low (17)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Whisker Litter-Robot 4 QuietShield Technology",
+        "asin": "B0CL5N5K29",
+        "best_for": "Whisper-quiet rotation barely audible across a quiet bedroom",
+        "msrp": ".00",
+        "affiliate_url": "https://link.amazon/B0003jySD"
+      },
+      {
+        "name": "PETKIT Pura Max Ultra-Quiet Motor",
+        "asin": "B0B5G8265J",
+        "best_for": "Low frequency brushless motor running under 35dB",
+        "msrp": ".00",
+        "affiliate_url": "https://www.amazon.com/dp/B0B5G8265J?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Neakasa M1 Low Noise Sifting Drum",
+        "asin": "B0CJ4T6D9B",
+        "best_for": "Smooth slow roll action",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B08awVKHW"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "keyword": "automatic litter box with waste drawer health tracking",
+    "category": "Self-Cleaning Litter Boxes",
+    "category_id": 5,
+    "intent": "commercial",
+    "search_volume_us": 1400,
+    "difficulty": "Low (19)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Whisker Litter-Robot 4 Smart Health Tracking",
+        "asin": "B0CL5N5K29",
+        "best_for": "Individual cat weight logging and bathroom visit frequency analytics",
+        "msrp": ".00",
+        "affiliate_url": "https://link.amazon/B0003jySD"
+      },
+      {
+        "name": "PETKIT Pura Max Smart App Health Monitor",
+        "asin": "B0B5G8265J",
+        "best_for": "Real-time urinary health tracking and visit duration telemetry",
+        "msrp": ".00",
+        "affiliate_url": "https://www.amazon.com/dp/B0B5G8265J?tag=pawgadgethub-20"
+      },
+      {
+        "name": "PetSafe ScoopFree Smart Litter Box",
+        "asin": "B08M3J7XQH",
+        "best_for": "Simple usage counter tracking box visits on your phone",
+        "msrp": ".95",
+        "affiliate_url": "https://link.amazon/B0iN9Sf1l"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "keyword": "best dishwasher safe stainless steel cat water fountain",
+    "category": "Smart Water Fountains",
+    "category_id": 6,
+    "intent": "commercial",
+    "search_volume_us": 2100,
+    "difficulty": "Low (20)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Veken Stainless Steel Cat Water Fountain 95oz",
+        "asin": "B085CD6KPP",
+        "best_for": "Full SUS304 food-grade stainless body safe for top dishwasher rack",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B0arAtOHB"
+      },
+      {
+        "name": "Petlibro Capsule Stainless Steel Fountain",
+        "asin": "B0CQXL2M8D",
+        "best_for": "Quick disassembly stainless drinking basin",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B00vwuY86"
+      },
+      {
+        "name": "Tomxcute Stainless Steel 3.2L Fountain",
+        "asin": "B08SQ8F67C",
+        "best_for": "Deep water reservoir and rust-free sanitary surface",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B09nIcm09"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "keyword": "wireless motion sensor cat water fountain cord free",
+    "category": "Smart Water Fountains",
+    "category_id": 6,
+    "intent": "commercial",
+    "search_volume_us": 1800,
+    "difficulty": "Low (22)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Petlibro Glacier Ultra-Quiet Wireless Fountain",
+        "asin": "B0CQXL2M8D",
+        "best_for": "Radar thermal motion detection flows only when cat approaches",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B00vwuY86"
+      },
+      {
+        "name": "DownyPaws Wireless Rechargeable Cat Water Fountain",
+        "asin": "B0BML6WNW2",
+        "best_for": "PIR sensor with 60-day internal rechargeable battery",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B0BML6WNW2?tag=pawgadgethub-20"
+      },
+      {
+        "name": "Uahpet Zero Cordless Cat Water Fountain",
+        "asin": "B0B9R64D4B",
+        "best_for": "Detachable inductive water tank with zero cables near water",
+        "msrp": ".99",
+        "affiliate_url": "https://www.amazon.com/dp/B0B9R64D4B?tag=pawgadgethub-20"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "keyword": "ceramic pet water fountain for cats that knock things over",
+    "category": "Smart Water Fountains",
+    "category_id": 6,
+    "intent": "commercial",
+    "search_volume_us": 1400,
+    "difficulty": "Low (18)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "PetSafe Drinkwell Stainless Multi-Tier Fountain",
+        "asin": "B005OQAU7I",
+        "best_for": "Heavy balanced base preventing playful paw tipping",
+        "msrp": ".95",
+        "affiliate_url": "https://link.amazon/B0eHNGpl8"
+      },
+      {
+        "name": "Pioneer Pet Big Max Stainless Steel Fountain",
+        "asin": "B00BD3UCP4",
+        "best_for": "Wide broad stance that cannot be flipped by energetic pets",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B0bLxgjlk"
+      },
+      {
+        "name": "Veken Stainless Steel Cat Water Fountain 95oz",
+        "asin": "B085CD6KPP",
+        "best_for": "Solid non-slip silicone feet and heavy water weight",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B0arAtOHB"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "keyword": "large capacity dog water fountain 2 gallons and up",
+    "category": "Smart Water Fountains",
+    "category_id": 6,
+    "intent": "commercial",
+    "search_volume_us": 1600,
+    "difficulty": "Low (19)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Pioneer Pet Big Max Stainless Steel 128oz",
+        "asin": "B00BD3UCP4",
+        "best_for": "Massive 1 gallon reservoir for large breeds with slobber catch",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B0bLxgjlk"
+      },
+      {
+        "name": "PetSafe Drinkwell Stainless Multi-Tier",
+        "asin": "B005OQAU7I",
+        "best_for": "High elevation elevated dish for tall dogs with joint stiffness",
+        "msrp": ".95",
+        "affiliate_url": "https://link.amazon/B0eHNGpl8"
+      },
+      {
+        "name": "Tomxcute Stainless Steel 3.2L Fountain",
+        "asin": "B08SQ8F67C",
+        "best_for": "Deep water bowl for multiple medium-to-large dogs",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B09nIcm09"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "keyword": "smart cat water fountain with app filter change reminder",
+    "category": "Smart Water Fountains",
+    "category_id": 6,
+    "intent": "commercial",
+    "search_volume_us": 1500,
+    "difficulty": "Low (17)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "PETKIT Eversweet Solo 2 Wireless Water Fountain",
+        "asin": "B0B92N6Q2F",
+        "best_for": "Bluetooth app status tracking filter lifespan and water levels",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B01a6mDqe"
+      },
+      {
+        "name": "Petlibro Dockstream Cordless Battery Fountain",
+        "asin": "B0BN1MHRN1",
+        "best_for": "Intelligent LED filter replacement and pump maintenance light",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B0dsyyMhz"
+      },
+      {
+        "name": "Catit PIXI Stainless Steel Fountain",
+        "asin": "B096WB6PBD",
+        "best_for": "Cat-nose LED indicator turning red when water is low",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B0bkWPI0V"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "keyword": "cat water fountain with UV sterilization pump",
+    "category": "Smart Water Fountains",
+    "category_id": 6,
+    "intent": "commercial",
+    "search_volume_us": 1300,
+    "difficulty": "Low (18)",
+    "status": "pending",
+    "post_type": "roundup",
+    "reviewed_products": [
+      {
+        "name": "Catit PIXI Stainless Steel Fountain with UV Clarification",
+        "asin": "B096WB6PBD",
+        "best_for": "UVC LED neutralizes waterborne bacteria automatically",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B0bkWPI0V"
+      },
+      {
+        "name": "PETKIT Eversweet Solo 2 Wireless Fountain",
+        "asin": "B0B92N6Q2F",
+        "best_for": "Multi-layer filtration with magnetic wireless pump",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B01a6mDqe"
+      },
+      {
+        "name": "Petlibro Glacier Ultra-Quiet Wireless Fountain",
+        "asin": "B0CQXL2M8D",
+        "best_for": "Ultra-clean water path with zero stagnant slime buildup",
+        "msrp": ".99",
+        "affiliate_url": "https://link.amazon/B00vwuY86"
+      }
+    ]
   }
 ]
