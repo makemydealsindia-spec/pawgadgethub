@@ -88,7 +88,7 @@
     "intent": "commercial",
     "search_volume_us": 1900,
     "difficulty": "Low (18)",
-    "status": "pending",
+    "status": "published",
     "post_type": "roundup",
     "reviewed_products": [
       {
@@ -112,7 +112,10 @@
         "best_for": "Smartphone scheduling and portion control",
         "affiliate_url": "https://link.amazon/B02uuhI6L"
       }
-    ]
+    ],
+    "post_id": 61,
+    "post_url": "https://pawgadgethub.com/microchip-cat-feeder-for-multi-cat-household/",
+    "published_at": "2026-11-20T02:41:44.814145"
   },
   {
     "id": 4,
