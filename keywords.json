@@ -125,7 +125,7 @@
     "intent": "commercial",
     "search_volume_us": 1200,
     "difficulty": "Very Low (15)",
-    "status": "pending",
+    "status": "published",
     "post_type": "comparison",
     "reviewed_products": [
       {
@@ -149,7 +149,10 @@
         "best_for": "Large capacity kibble storage",
         "affiliate_url": "https://link.amazon/B04uLbg3A"
       }
-    ]
+    ],
+    "post_id": 64,
+    "post_url": "https://pawgadgethub.com/petlibro-granary-vs-honeyguaridan-automatic-pet-feeder-review/",
+    "published_at": "2026-11-20T14:45:37.495973"
   },
   {
     "id": 5,
