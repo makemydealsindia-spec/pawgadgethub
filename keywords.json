@@ -162,7 +162,7 @@
     "intent": "informational/commercial",
     "search_volume_us": 880,
     "difficulty": "Very Low (12)",
-    "status": "pending",
+    "status": "published",
     "post_type": "guide",
     "reviewed_products": [
       {
@@ -186,7 +186,10 @@
         "best_for": "Reliable app integration with Alexa",
         "affiliate_url": "https://link.amazon/B02uuhI6L"
       }
-    ]
+    ],
+    "post_id": 67,
+    "post_url": "https://pawgadgethub.com/smart-pet-feeder-that-connects-to-5ghz-wifi/",
+    "published_at": "2026-11-21T02:40:17.301913"
   },
   {
     "id": 6,
