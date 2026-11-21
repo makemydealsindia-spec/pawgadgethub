@@ -199,7 +199,7 @@
     "intent": "commercial",
     "search_volume_us": 1400,
     "difficulty": "Low (19)",
-    "status": "pending",
+    "status": "published",
     "post_type": "roundup",
     "reviewed_products": [
       {
@@ -223,7 +223,10 @@
         "best_for": "Gold standard puzzle bowl for large breeds",
         "affiliate_url": "https://link.amazon/B09IPFEZi"
       }
-    ]
+    ],
+    "post_id": 71,
+    "post_url": "https://pawgadgethub.com/best-slow-feed-automatic-dog-feeder-for-fast-eaters/",
+    "published_at": "2026-11-21T14:40:55.069840"
   },
   {
     "id": 7,
