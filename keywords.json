@@ -273,7 +273,7 @@
     "intent": "commercial",
     "search_volume_us": 950,
     "difficulty": "Low (16)",
-    "status": "pending",
+    "status": "published",
     "post_type": "roundup",
     "reviewed_products": [
       {
@@ -297,7 +297,10 @@
         "best_for": "Reliable anti-clog portion control",
         "affiliate_url": "https://link.amazon/B00A86kdH"
       }
-    ]
+    ],
+    "post_id": 77,
+    "post_url": "https://pawgadgethub.com/automatic-cat-feeder-with-battery-backup-for-power-outages/",
+    "published_at": "2026-11-22T14:39:43.587242"
   },
   {
     "id": 9,
