@@ -236,7 +236,7 @@
     "intent": "commercial",
     "search_volume_us": 720,
     "difficulty": "Very Low (14)",
-    "status": "pending",
+    "status": "published",
     "post_type": "roundup",
     "reviewed_products": [
       {
@@ -260,7 +260,10 @@
         "best_for": "Near-silent rotating disk mechanism",
         "affiliate_url": "https://link.amazon/B0fNZTUOj"
       }
-    ]
+    ],
+    "post_id": 74,
+    "post_url": "https://pawgadgethub.com/quietest-automatic-cat-feeder-for-bedroom-placement/",
+    "published_at": "2026-11-22T02:42:27.768428"
   },
   {
     "id": 8,
