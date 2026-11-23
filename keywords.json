@@ -354,7 +354,7 @@
     "intent": "commercial",
     "search_volume_us": 2400,
     "difficulty": "Low (19)",
-    "status": "pending",
+    "status": "published",
     "post_type": "roundup",
     "reviewed_products": [
       {
@@ -378,7 +378,10 @@
         "best_for": "Smallest real-time LTE cat collar",
         "affiliate_url": "https://link.amazon/B08MZM3Zi"
       }
-    ]
+    ],
+    "post_id": 80,
+    "post_url": "https://pawgadgethub.com/best-small-gps-tracker-for-cats-outdoor/",
+    "published_at": "2026-11-23T02:46:03.883773"
   },
   {
     "id": 11,
