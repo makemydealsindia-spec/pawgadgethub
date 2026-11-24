@@ -391,7 +391,7 @@
     "intent": "commercial",
     "search_volume_us": 3200,
     "difficulty": "Low-Medium (22)",
-    "status": "pending",
+    "status": "published",
     "post_type": "comparison",
     "reviewed_products": [
       {
@@ -415,7 +415,10 @@
         "best_for": "Real-time multi-network GPS tracking",
         "affiliate_url": "https://link.amazon/B08xbRIgM"
       }
-    ]
+    ],
+    "post_id": 83,
+    "post_url": "https://pawgadgethub.com/tractive-vs-fi-collar-review-and-comparison/",
+    "published_at": "2026-11-24T02:46:04.132346"
   },
   {
     "id": 12,
