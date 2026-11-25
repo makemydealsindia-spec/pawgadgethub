@@ -428,7 +428,7 @@
     "intent": "commercial",
     "search_volume_us": 1100,
     "difficulty": "Low (18)",
-    "status": "pending",
+    "status": "published",
     "post_type": "roundup",
     "reviewed_products": [
       {
@@ -452,7 +452,10 @@
         "best_for": "Budget 17.6g lightweight option",
         "affiliate_url": "https://link.amazon/B08xbRIgM"
       }
-    ]
+    ],
+    "post_id": 86,
+    "post_url": "https://pawgadgethub.com/lightweight-gps-collar-for-small-dogs-under-10-lbs/",
+    "published_at": "2026-11-25T02:47:17.579795"
   },
   {
     "id": 13,
