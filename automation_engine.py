@@ -149,9 +149,13 @@ def inject_bidirectional_backlink(new_post_id, new_post_title, new_post_url, cat
     except Exception as e:
         print(f"[Warning] Could not update backlink on post #{target_post['id']}: {e}")
 
-def call_gemini(prompt, api_key, max_retries=3):
-    """Calls Gemini API using standard library urllib with gemini-3.1-flash-lite and backoff."""
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key={api_key}"
+def call_gemini(prompt, api_key, max_retries=4):
+    """Calls Gemini API using standard library urllib with retry/backoff and fallback models."""
+    models = [
+        "gemini-3.1-flash-lite",
+        "gemini-2.5-flash",
+        "gemini-2.5-flash-lite"
+    ]
     payload = {
         "contents": [
             {
@@ -166,28 +170,40 @@ def call_gemini(prompt, api_key, max_retries=3):
         }
     }
     
-    req = urllib.request.Request(
-        url,
-        data=json.dumps(payload).encode("utf-8"),
-        headers={"Content-Type": "application/json"},
-        method="POST"
-    )
-    
     import time
-    for attempt in range(max_retries):
-        try:
-            with urllib.request.urlopen(req, timeout=90) as response:
-                res_json = json.loads(response.read().decode("utf-8"))
-                candidate = res_json["candidates"][0]["content"]["parts"][0]["text"]
-                return json.loads(candidate)
-        except urllib.error.HTTPError as e:
-            if e.code == 429 and attempt < max_retries - 1:
-                wait_time = (attempt + 1) * 10
-                print(f"[Rate Limit] Exceeded quota. Waiting {wait_time}s before retrying...")
-                time.sleep(wait_time)
-            else:
+    last_error = None
+    for model in models:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+        for attempt in range(max_retries):
+            req = urllib.request.Request(
+                url,
+                data=json.dumps(payload).encode("utf-8"),
+                headers={"Content-Type": "application/json"},
+                method="POST"
+            )
+            try:
+                with urllib.request.urlopen(req, timeout=90) as response:
+                    res_json = json.loads(response.read().decode("utf-8"))
+                    candidate = res_json["candidates"][0]["content"]["parts"][0]["text"]
+                    return json.loads(candidate)
+            except urllib.error.HTTPError as e:
                 error_body = e.read().decode("utf-8")
-                raise RuntimeError(f"Gemini API Error {e.code}: {error_body}")
+                last_error = f"Gemini API Error {e.code} ({model}): {error_body}"
+                if e.code in (429, 500, 502, 503, 504) and attempt < max_retries - 1:
+                    wait_time = (attempt + 1) * 15
+                    print(f"[Retryable Error {e.code}] {model} busy. Waiting {wait_time}s before retrying...")
+                    time.sleep(wait_time)
+                else:
+                    print(f"[Fallback] {model} failed ({e.code}), trying next fallback model if available...")
+                    break
+            except Exception as e:
+                last_error = f"Gemini Request Error ({model}): {e}"
+                if attempt < max_retries - 1:
+                    wait_time = (attempt + 1) * 15
+                    time.sleep(wait_time)
+                else:
+                    break
+    raise RuntimeError(last_error)
 
 # High-resolution Unsplash royalty-free photos categorized for pet tech (Zero API keys needed!)
 CATEGORY_IMAGE_POOL = {
