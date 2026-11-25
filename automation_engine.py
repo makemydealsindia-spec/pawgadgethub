@@ -166,6 +166,7 @@ def call_gemini(prompt, api_key, max_retries=4):
         ],
         "generationConfig": {
             "temperature": 0.7,
+            "maxOutputTokens": 8192,
             "responseMimeType": "application/json"
         }
     }
@@ -301,24 +302,47 @@ def publish_to_wordpress(post_data, config, category_id, featured_media_id=None,
     with urllib.request.urlopen(req, timeout=30) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
-def ping_indexnow(site_url, post_url):
-    """Pings IndexNow for instant indexing across Bing and Yandex."""
+def update_rank_math_meta(post_id, focus_keyword, seo_title, meta_description, config):
+    """Sets Rank Math SEO focus keyword, title, and meta description via REST API."""
     try:
-        domain = urllib.parse.urlparse(site_url).netloc
+        url = f"{config['site_url'].rstrip('/')}/wp-json/rankmath/v1/updateMeta"
         payload = {
-            "host": domain,
-            "urlList": [post_url]
+            "objectID": post_id,
+            "objectType": "post",
+            "meta": {
+                "rank_math_focus_keyword": focus_keyword,
+                "rank_math_title": seo_title,
+                "rank_math_description": meta_description
+            }
         }
-        req = urllib.request.Request(
-            "https://api.indexnow.org/indexnow",
-            data=json.dumps(payload).encode("utf-8"),
-            headers={"Content-Type": "application/json; charset=utf-8"},
-            method="POST"
-        )
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            print(f"[IndexNow] Pinged Bing/Yandex for {post_url} (HTTP {resp.status})")
+        headers = {
+            "Authorization": get_wp_auth_header(config),
+            "Content-Type": "application/json",
+            "User-Agent": "PawGadgetHub-Automation/2.0"
+        }
+        req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            print(f"[SEO] Rank Math metadata updated for Post #{post_id} (Focus: '{focus_keyword}')")
     except Exception as e:
-        print(f"[Notice] IndexNow notification skipped: {e}")
+        print(f"[Warning] Could not update Rank Math metadata: {e}")
+
+def ping_indexnow(site_url, post_url, config=None):
+    """Submits URL via WordPress Rank Math Instant Indexing (IndexNow) endpoint."""
+    try:
+        if config:
+            url = f"{site_url.rstrip('/')}/wp-json/rankmath/v1/in/submitUrls"
+            payload = {"urls": post_url, "action": "bing_submit"}
+            headers = {
+                "Authorization": get_wp_auth_header(config),
+                "Content-Type": "application/json",
+                "User-Agent": "PawGadgetHub-Automation/2.0"
+            }
+            req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                print(f"[Instant Indexing] Submitted {post_url} via Rank Math IndexNow ({resp.read().decode()})")
+                return
+    except Exception as e:
+        print(f"[Notice] Rank Math Instant Indexing skipped: {e}")
 
 def build_prompt_for_keyword(item, amazon_tag, published_posts, config):
     keyword = item["keyword"]
@@ -348,8 +372,10 @@ def build_prompt_for_keyword(item, amazon_tag, published_posts, config):
         prods_list = []
         for p in item["reviewed_products"]:
             aff_url = p.get('affiliate_url', f"https://www.amazon.com/dp/{p['asin']}?tag={amazon_tag}")
-            prods_list.append(f"- Product: {p['name']} (ASIN: {p['asin']}, Best For: {p['best_for']}, Approx. MSRP: {p['msrp']}, Target Affiliate URL: {aff_url})")
-        reviewed_products_text = "EXACT PRE-VETTED PRODUCTS TO REVIEW (USE THESE EXACT COMMERCIALLY AVAILABLE PRODUCTS AND EXACT TARGET AFFILIATE URLs):\n" + "\n".join(prods_list) + "\n"
+            img_url = p.get('image_url', '')
+            img_note = f", Product Image URL: {img_url}" if img_url else ""
+            prods_list.append(f"- Product: {p['name']} (ASIN: {p['asin']}, Best For: {p['best_for']}, Approx. MSRP: {p['msrp']}, Target Affiliate URL: {aff_url}{img_note})")
+        reviewed_products_text = "EXACT PRE-VETTED PRODUCTS TO REVIEW (USE THESE EXACT COMMERCIALLY AVAILABLE PRODUCTS, EXACT TARGET AFFILIATE URLs, AND PRODUCT IMAGE URLs):\n" + "\n".join(prods_list) + "\n"
 
     prompt = f"""
 You are an expert American pet technology reviewer and pet parent writing for PawGadgetHub.com.
@@ -378,22 +404,25 @@ Tone: Friendly, authoritative, practical, and highly trustworthy (Brian Dean SEO
 Language: American English (use 'behavior', 'color', 'vet', 'leash', 'crate', 'ounces', 'lbs', '$').
 
 Requirements:
-1. Word count: 1,800 to 2,500 words.
-2. Structure (formatted in clean HTML using standard tags: <h2>, <h3>, <p>, <ul>, <li>, <table>, <strong>):
-   - Engaging introduction with immediate hook addressing the real-world pet friction point.
-   - "Quick Answer / Top Recommendations" Summary Callout Box (concise 2-3 sentences ideal for Google AI Overviews and Featured Snippets).
-   - Comparison Table (columns: Product, Best For, Standout Feature, Approx. Price, Amazon Check).
-   - 4 to 5 detailed product sections (H2 for each product):
-     * Key Specifications (bullets)
-     * Why We Love It / Hands-On Impressions
-     * The Drawbacks / What Could Be Better (Crucial for honest E-E-A-T!)
-     * Total Cost of Ownership (Hardware price + any monthly subscription fees)
+1. Word count: STRICTLY 1,800 to 2,400 words. Write comprehensive, thorough paragraphs (at least 300-400 words per product review and 350+ words for the Buyer's Guide). Do NOT write thin summaries.
+2. Structure & Visual Appearance (formatted in clean HTML using standard tags: <h2>, <h3>, <p>, <ul>, <li>, <table>, <strong>, <div>):
+   - Engaging 150-200 word introduction addressing the real-world pet friction point and mentioning "{keyword}" naturally.
+   - Styled "Quick Answer: Top Recommendations" Callout Box:
+     <div style="background:#f8fafc;border-left:4px solid #f59e0b;padding:18px 22px;margin:24px 0;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.06);"><strong>Quick Answer: Top Recommendations</strong><p style="margin:8px 0 0;">...</p></div>
+   - Styled Comparison Table (columns: Product, Best For, Standout Feature, Approx. Price, Amazon Check) with <thead> and <tbody>. Link product names and "Check Price &rarr;" using each product's exact Target Affiliate URL.
+   - Detailed Product Review Sections (one <h2> per product from the list above):
+     * Immediately after the <h2>Product Name</h2>, if a Product Image URL is provided, embed:
+       <div style="text-align:center;margin:20px 0 24px;padding:16px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;"><img src="PRODUCT_IMAGE_URL" alt="Product Name" style="max-height:280px;width:auto;max-width:100%;object-fit:contain;border-radius:8px;" /></div>
+     * Key Specifications (<ul> bullets with concrete 2026 specs)
+     * Why We Love It / Hands-On Impressions (detailed paragraph)
+     * The Drawbacks / What Could Be Better (honest E-E-A-T critique)
+     * Total Cost of Ownership (hardware price + any monthly subscription fees)
      * Who It's Best For
-     * Clean direct button link: <p><a href="EXACT_TARGET_AFFILIATE_URL_FOR_THIS_PRODUCT" target="_blank" rel="nofollow noopener sponsored" style="display:inline-block;background:#f59e0b;color:#111827;padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:bold;">Check Price on Amazon &rarr;</a></p>
-       (Strictly use the exact Target Affiliate URL specified for that product above, e.g. SiteStripe shortlinks like https://link.amazon/..., so the visitor lands directly on the exact product listing with active affiliate attribution). Also link the product name in comparison tables using this exact affiliate URL.
-   - Comprehensive Buyer's Guide (What to consider before buying: battery life, multi-pet households, cleaning ease, WiFi requirements).
-   - Frequently Asked Questions (FAQ) with 3-4 real, practical questions and direct answers.
-   - Final Verdict / Conclusion.
+     * Clean direct button link: <p><a href="EXACT_TARGET_AFFILIATE_URL_FOR_THIS_PRODUCT" target="_blank" rel="nofollow noopener sponsored" style="display:inline-block;background:#f59e0b;color:#111827;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;">Check Price on Amazon &rarr;</a></p>
+       (Strictly use the exact Target Affiliate URL specified for that product above, e.g. SiteStripe shortlinks like https://link.amazon/...).
+   - Comprehensive Buyer's Guide (<h2>Buyer's Guide: How to Choose...</h2> with 3-4 <h3> subheadings covering battery life, multi-pet households, cleaning ease, WiFi/LTE requirements).
+   - <h2>Frequently Asked Questions</h2> with 4 real, practical <h3>Question?</h3> + <p>Direct Answer</p> pairs.
+   - Styled Final Verdict box (<h2>Final Verdict</h2> + concise recommendation).
 
 Return ONLY a valid JSON object matching this schema:
 {{
@@ -465,18 +494,46 @@ def generate_and_post_single(item_id=None, status="publish"):
     post_data["meta_description"] = sanitize_text(post_data.get("meta_description", ""))
     post_data["content_html"] = sanitize_text(post_data.get("content_html", ""))
 
-    # Programmatic enforcement: Guarantee user SiteStripe links and verified ASIN URLs are active
+    # Programmatic enforcement: Guarantee user SiteStripe links, product images, and FAQ Schema
     if "reviewed_products" in target_item:
         import re
         for p in target_item["reviewed_products"]:
             asin = p.get("asin")
             aff_url = p.get("affiliate_url")
+            img_url = p.get("image_url")
+            prod_name = p.get("name", "")
             if asin and aff_url:
-                # Replace any amazon.com/dp/{asin}... canonical link with the preferred affiliate URL
                 pattern = r"https://(?:www\.)?amazon\.com/dp/" + re.escape(asin) + r'[^"\'<>\s]*'
                 post_data["content_html"] = re.sub(pattern, aff_url, post_data["content_html"])
-                # Also replace placeholder EXACT_TARGET_AFFILIATE_URL if Gemini left it verbatim
-                post_data["content_html"] = post_data["content_html"].replace(f"EXACT_TARGET_AFFILIATE_URL_FOR_THIS_PRODUCT", aff_url)
+                post_data["content_html"] = post_data["content_html"].replace("EXACT_TARGET_AFFILIATE_URL_FOR_THIS_PRODUCT", aff_url)
+            if img_url and img_url not in post_data["content_html"]:
+                # Inject styled product image container right after the matching product H2
+                img_block = f'\n<div style="text-align:center;margin:20px 0 24px;padding:16px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;"><img src="{img_url}" alt="{prod_name}" style="max-height:280px;width:auto;max-width:100%;object-fit:contain;border-radius:8px;" /></div>'
+                first_word = prod_name.split()[0] if prod_name else ""
+                if first_word:
+                    h2_pattern = re.compile(r'(<h2[^>]*>[^<]*' + re.escape(first_word) + r'[^<]*</h2>)', re.IGNORECASE)
+                    if h2_pattern.search(post_data["content_html"]):
+                        post_data["content_html"] = h2_pattern.sub(r'\1' + img_block, post_data["content_html"], count=1)
+
+    # Auto-generate FAQPage JSON-LD schema if FAQ Q&As exist
+    import re
+    faq_section = re.search(r'<h2[^>]*>Frequently Asked Questions.*?</h2>(.*?)(?:<h2|$)', post_data["content_html"], re.DOTALL | re.IGNORECASE)
+    if faq_section:
+        qa_pairs = re.findall(r'<h3[^>]*>(.*?)</h3>\s*<p[^>]*>(.*?)</p>', faq_section.group(1), re.DOTALL)
+        if qa_pairs:
+            faq_entities = []
+            for q_html, a_html in qa_pairs:
+                q_clean = re.sub(r'<[^>]+>', '', q_html).strip()
+                a_clean = re.sub(r'<[^>]+>', '', a_html).strip()
+                if q_clean and a_clean:
+                    faq_entities.append({
+                        "@type": "Question",
+                        "name": q_clean,
+                        "acceptedAnswer": {"@type": "Answer", "text": a_clean}
+                    })
+            if faq_entities:
+                faq_schema = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq_entities}
+                post_data["content_html"] += f'\n<script type="application/ld+json">{json.dumps(faq_schema)}</script>'
 
     print(f"      Generated Title: {post_data['title']}")
     
@@ -502,13 +559,16 @@ def generate_and_post_single(item_id=None, status="publish"):
     post_url = created_post.get("link", f"{config['site_url']}/{post_data['slug']}")
     print(f"[Success] Post published live: {post_url} (ID: {created_post['id']})")
     
+    # 4b. Set Rank Math SEO Focus Keyword, Title, and Description
+    update_rank_math_meta(created_post["id"], target_item["keyword"], post_data["title"], post_data["meta_description"], config)
+    
     # 5. Bidirectional Internal Linking (Update earlier posts to link to this new post)
     print(f"[5/6] Updating sibling articles with bidirectional backlinks...")
     inject_bidirectional_backlink(created_post["id"], post_data["title"], post_url, target_item["category_id"], config, live_posts)
     
-    # 6. IndexNow Instant Ping
-    print(f"[6/6] Notifying search engines via IndexNow...")
-    ping_indexnow(config["site_url"], post_url)
+    # 6. Instant Indexing Ping via Rank Math IndexNow
+    print(f"[6/6] Notifying search engines via Rank Math Instant Indexing...")
+    ping_indexnow(config["site_url"], post_url, config)
     
     # Update keyword status
     target_item["status"] = "published"
