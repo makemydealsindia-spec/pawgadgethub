@@ -503,7 +503,7 @@
     "intent": "commercial",
     "search_volume_us": 1300,
     "difficulty": "Low-Medium (24)",
-    "status": "pending",
+    "status": "published",
     "post_type": "roundup",
     "reviewed_products": [
       {
@@ -530,7 +530,10 @@
         "affiliate_url": "https://link.amazon/B0jel7gWj",
         "image_url": "https://pawgadgethub.com/wp-content/uploads/2026/11/fi-series-3-collar.jpg"
       }
-    ]
+    ],
+    "post_id": 117,
+    "post_url": "https://pawgadgethub.com/best-waterproof-gps-tracker-for-hunting-and-hiking-dogs/",
+    "published_at": "2026-11-26T02:46:46.634251"
   },
   {
     "id": 14,
