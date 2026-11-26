@@ -543,7 +543,7 @@
     "intent": "informational/commercial",
     "search_volume_us": 5400,
     "difficulty": "Low-Medium (23)",
-    "status": "pending",
+    "status": "published",
     "post_type": "comparison",
     "reviewed_products": [
       {
@@ -570,7 +570,10 @@
         "affiliate_url": "https://link.amazon/B09eiXPK2",
         "image_url": "https://pawgadgethub.com/wp-content/uploads/2026/11/tracki-pro-gps.jpg"
       }
-    ]
+    ],
+    "post_id": 120,
+    "post_url": "https://pawgadgethub.com/apple-airtag-vs-gps-tracker-for-dogs-which-is-safer/",
+    "published_at": "2026-11-26T14:50:13.281944"
   },
   {
     "id": 15,
