@@ -170,7 +170,7 @@ function pgh_share_bar( $position = 'top' ) {
 				<?php echo $svg_copy; // phpcs:ignore WordPress.Security.EscapeOutput ?><span><?php esc_html_e( 'Copy Link', 'pawgadgethub' ); ?></span>
 			</button>
 			<a class="pgh-share__btn pgh-share__btn--wa" href="https://api.whatsapp.com/send?text=<?php echo esc_attr( $title . '%20' . $url ); ?>" target="_blank" rel="noopener noreferrer"><?php echo $svg_wa; // phpcs:ignore WordPress.Security.EscapeOutput ?><span>WhatsApp</span></a>
-			<a class="pgh-share__btn pgh-share__btn--x" href="https://twitter.com/intent/tweet?text=<?php echo esc_attr( $title ); ?>&amp;url=<?php echo esc_attr( $url ); ?>" target="_blank" rel="noopener noreferrer"><?php echo $svg_x; // phpcs:ignore WordPress.Security.EscapeOutput ?><span>X</span></a>
+			<a class="pgh-share__btn pgh-share__btn--x" href="https://twitter.com/intent/tweet?text=<?php echo esc_attr( $title ); ?>&amp;url=<?php echo esc_attr( $url ); ?>" target="_blank" rel="noopener noreferrer" aria-label="Share on X"><?php echo $svg_x; // phpcs:ignore WordPress.Security.EscapeOutput ?><span>Post</span></a>
 			<a class="pgh-share__btn pgh-share__btn--fb" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( $url ); ?>" target="_blank" rel="noopener noreferrer"><?php echo $svg_fb; // phpcs:ignore WordPress.Security.EscapeOutput ?><span>Facebook</span></a>
 			<a class="pgh-share__btn pgh-share__btn--pin" href="https://pinterest.com/pin/create/button/?url=<?php echo esc_attr( $url ); ?>&amp;media=<?php echo esc_attr( $img ); ?>&amp;description=<?php echo esc_attr( $title ); ?>" target="_blank" rel="noopener noreferrer"><?php echo $svg_pin; // phpcs:ignore WordPress.Security.EscapeOutput ?><span>Pinterest</span></a>
 		</div>

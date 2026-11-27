@@ -74,6 +74,16 @@
 		update();
 	}
 
+	// Show sticky mobile CTA bar only after scrolling past the intro (> 420px).
+	var stickyCta = document.querySelector('.pgh-sticky-cta');
+	if (stickyCta) {
+		var checkSticky = function () {
+			stickyCta.classList.toggle('is-shown', window.scrollY > 420);
+		};
+		window.addEventListener('scroll', checkSticky, { passive: true });
+		checkSticky();
+	}
+
 	// Interactive "Browse by Pet" filter tabs on the homepage.
 	var petTabs = document.querySelectorAll('.pgh-pet-tab');
 	var petCards = document.querySelectorAll('#reviews .pgh-card');

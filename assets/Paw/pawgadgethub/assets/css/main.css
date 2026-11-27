@@ -122,8 +122,11 @@ p { margin: 0 0 1.1em; }
 .site-header__inner { display: flex; align-items: center; gap: 20px; min-height: var(--pgh-header-h); }
 .site-branding { flex: none; }
 .site-logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
-.site-logo__mark-img { width: 44px; height: 44px; object-fit: contain; display: block; flex: none; }
-.site-logo__text { font-family: var(--pgh-font-head); font-weight: 800; font-size: 1.42rem; letter-spacing: -0.025em; line-height: 1; color: #fff; display: inline-flex; align-items: baseline; }
+.site-logo__mark-img {
+	width: 42px; height: 42px; object-fit: contain; display: block; flex: none;
+	background: #fff; border-radius: 50%; padding: 3px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+}
+.site-logo__text { font-family: var(--pgh-font-head); font-weight: 800; font-size: 1.38rem; letter-spacing: -0.025em; line-height: 1; color: #fff; display: inline-flex; align-items: baseline; }
 .site-logo__text em { font-style: normal; color: var(--pgh-orange); }
 .custom-logo-link img { max-height: 44px; width: auto; display: block; }
 .pgh-paw .pgh-paw__toes { fill: var(--paw-1, var(--pgh-navy)); }
@@ -638,9 +641,11 @@ a.page-numbers:hover { border-color: var(--pgh-teal); color: var(--pgh-teal); }
 .pgh-rating { color: #d97706; font-weight: 700; font-size: 0.92rem; letter-spacing: 0.02em; }
 .pgh-sticky-cta {
 	display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
-	background: #0f172a; color: #fff; padding: 10px 14px; box-shadow: 0 -4px 18px rgba(0,0,0,0.18);
+	background: #08323a; color: #fff; padding: 10px 14px; box-shadow: 0 -4px 18px rgba(0,0,0,0.22);
 	align-items: center; justify-content: space-between; gap: 10px;
+	transform: translateY(100%); opacity: 0; pointer-events: none; transition: transform 0.28s ease, opacity 0.28s ease;
 }
+.pgh-sticky-cta.is-shown { transform: translateY(0); opacity: 1; pointer-events: auto; }
 .pgh-sticky-cta__info { font-size: 0.82rem; line-height: 1.25; overflow: hidden; }
 .pgh-sticky-cta__label { display: block; font-size: 0.68rem; text-transform: uppercase; color: #fbbf24; font-weight: 700; letter-spacing: 0.05em; }
 .pgh-sticky-cta__name { display: block; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -651,6 +656,17 @@ a.page-numbers:hover { border-color: var(--pgh-teal); color: var(--pgh-teal); }
 @media (max-width: 768px) {
 	.pgh-sticky-cta { display: flex; }
 	body.single-post { padding-bottom: 64px; }
+}
+
+/* Author box crisp avatar & mobile stack */
+.pgh-authorbox { display: flex; gap: 16px; align-items: flex-start; }
+.pgh-authorbox__avatar { flex: none; width: 56px; height: 56px; border-radius: 50%; background: #fff; border: 2px solid #fde3cf; padding: 3px; overflow: hidden; box-shadow: 0 2px 8px rgba(13, 74, 84, 0.08); }
+.pgh-authorbox__avatar img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 50%; }
+@media (max-width: 600px) {
+	.pgh-authorbox { flex-direction: column; align-items: center; text-align: center; padding: 18px 16px; }
+	.pgh-article__title { font-size: 1.55rem; line-height: 1.18; }
+	.pgh-share { justify-content: center; text-align: center; }
+	.pgh-share__btns { justify-content: center; }
 }
 
 @media print {

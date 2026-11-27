@@ -72,7 +72,9 @@ get_header();
 				<?php pgh_share_bar( 'bottom' ); ?>
 
 				<aside class="pgh-authorbox">
-					<div class="pgh-authorbox__avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 72 ); // phpcs:ignore WordPress.Security.EscapeOutput ?></div>
+					<div class="pgh-authorbox__avatar">
+						<img src="<?php echo esc_url( PGH_URI . '/assets/img/site-icon-512.png' ); ?>" alt="<?php echo esc_attr( get_the_author() ); ?>" width="56" height="56" />
+					</div>
 					<div>
 						<p class="pgh-authorbox__name"><?php echo esc_html( get_the_author() ); ?></p>
 						<p>
