@@ -122,9 +122,9 @@ p { margin: 0 0 1.1em; }
 .site-header__inner { display: flex; align-items: center; gap: 20px; min-height: var(--pgh-header-h); }
 .site-branding { flex: none; }
 .site-logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
-.site-logo__mark { width: 38px; height: 38px; flex: none; }
-.site-logo__text { font-family: var(--pgh-font-head); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; line-height: 1; color: #fff; }
-.site-logo__text em { font-style: normal; color: var(--pgh-teal-light); }
+.site-logo__mark-img { width: 44px; height: 44px; object-fit: contain; display: block; flex: none; }
+.site-logo__text { font-family: var(--pgh-font-head); font-weight: 800; font-size: 1.42rem; letter-spacing: -0.025em; line-height: 1; color: #fff; display: inline-flex; align-items: baseline; }
+.site-logo__text em { font-style: normal; color: var(--pgh-orange); }
 .custom-logo-link img { max-height: 44px; width: auto; display: block; }
 .pgh-paw .pgh-paw__toes { fill: var(--paw-1, var(--pgh-navy)); }
 .pgh-paw .pgh-paw__pad { fill: var(--paw-2, var(--pgh-teal)); }
@@ -504,6 +504,91 @@ a.page-numbers:hover { border-color: var(--pgh-teal); color: var(--pgh-teal); }
 .wp-caption-text { font-size: 0.875rem; color: var(--pgh-muted); text-align: center; }
 .sticky, .bypostauthor { display: block; }
 .gallery-caption { display: block; }
+
+/* ---------- Animations, Live Search, Share Bar, Compact TOC & Responsive Tables ---------- */
+.pgh-reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.45s ease, transform 0.45s ease; }
+.pgh-reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+@keyframes pghFloat {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-5px); }
+}
+.pgh-collage__badge { animation: pghFloat 4s ease-in-out infinite; }
+
+.pgh-live-results {
+	position: absolute; top: calc(100% + 6px); left: 0; right: 0; z-index: 300;
+	background: #fff; border: 1px solid var(--pgh-line); border-radius: 12px;
+	box-shadow: 0 14px 36px rgba(13, 74, 84, 0.22); overflow: hidden; max-height: 360px; overflow-y: auto;
+}
+.pgh-live-results__item {
+	display: flex; align-items: center; gap: 12px; padding: 10px 14px; text-decoration: none;
+	color: var(--pgh-ink); border-bottom: 1px solid var(--pgh-line); font-size: 0.92rem; font-weight: 600;
+	transition: background 0.15s;
+}
+.pgh-live-results__item:last-child { border-bottom: 0; }
+.pgh-live-results__item:hover { background: var(--pgh-soft-teal); color: var(--pgh-navy); }
+.pgh-live-results__item img { width: 56px; height: 38px; object-fit: cover; border-radius: 6px; flex: none; }
+.pgh-live-results__ph { width: 56px; height: 38px; display: grid; place-items: center; background: var(--pgh-soft); border-radius: 6px; flex: none; }
+.pgh-live-results__msg { padding: 14px 16px; font-size: 0.88rem; color: var(--pgh-muted); }
+
+.pgh-toc {
+	background: var(--pgh-soft); border: 1px solid #fde3cf; border-left: 4px solid var(--pgh-orange);
+	border-radius: 12px; padding: 12px 16px; margin: 20px 0 24px;
+}
+.pgh-toc summary {
+	cursor: pointer; font-family: var(--pgh-font-head); font-weight: 700; font-size: 0.95rem; color: var(--pgh-navy);
+	list-style: none; display: flex; align-items: center; justify-content: space-between;
+}
+.pgh-toc summary::-webkit-details-marker { display: none; }
+.pgh-toc summary::after { content: '▾'; font-size: 1rem; color: var(--pgh-orange-dark); transition: transform 0.2s; }
+.pgh-toc details[open] summary::after { transform: rotate(180deg); }
+.pgh-toc ol { margin: 12px 0 4px; padding-left: 1.3em; font-size: 0.9rem; }
+.pgh-toc li { margin-bottom: 5px; }
+.pgh-toc a { text-decoration: none; color: var(--pgh-ink); font-weight: 500; }
+.pgh-toc a:hover { color: var(--pgh-orange-dark); text-decoration: underline; }
+
+.pgh-share {
+	display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+	margin: 16px 0 8px; padding: 12px 14px; background: var(--pgh-soft-teal);
+	border: 1px solid #cfe7e7; border-radius: 12px;
+}
+.pgh-share__label { font-family: var(--pgh-font-head); font-weight: 700; font-size: 0.85rem; color: var(--pgh-navy); }
+.pgh-share__btns { display: flex; flex-wrap: wrap; gap: 7px; }
+.pgh-share__btn {
+	display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 999px;
+	font-size: 0.78rem; font-weight: 700; text-decoration: none; border: 1px solid transparent; cursor: pointer;
+	transition: transform 0.15s, opacity 0.15s;
+}
+.pgh-share__btn:hover { transform: translateY(-1px); opacity: 0.92; }
+.pgh-share__btn--copy { background: var(--pgh-navy); color: #fff; }
+.pgh-share__btn--copy.is-copied { background: #16a34a; }
+.pgh-share__btn--wa { background: #25d366; color: #fff; }
+.pgh-share__btn--x { background: #0f172a; color: #fff; }
+.pgh-share__btn--fb { background: #1877f2; color: #fff; }
+.pgh-share__btn--pin { background: #e60023; color: #fff; }
+
+.pgh-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0; border-radius: 12px; border: 1px solid var(--pgh-line); background: #fff; }
+.pgh-table-wrap table { width: 100%; border-collapse: collapse; margin: 0; min-width: 560px; font-size: 0.92rem; }
+.pgh-table-wrap th { background: var(--pgh-navy); color: #fff; text-align: left; padding: 12px 14px; font-family: var(--pgh-font-head); font-size: 0.85rem; }
+.pgh-table-wrap td { padding: 12px 14px; border-bottom: 1px solid var(--pgh-line); vertical-align: middle; }
+.pgh-table-wrap tr:last-child td { border-bottom: 0; }
+
+.entry-content img { transition: transform 0.25s ease; }
+.entry-content div:hover > img { transform: scale(1.02); }
+
+/* Tablet & Mobile Refinements */
+@media (max-width: 960px) {
+	.site-header__inner { gap: 12px; }
+	.site-logo__text { font-size: 1.25rem; }
+	.site-logo__mark-img { width: 38px; height: 38px; }
+}
+@media (max-width: 600px) {
+	.pgh-hero__actions .pgh-btn { width: 100%; }
+	.pgh-collage { grid-template-columns: 1fr 1fr; grid-template-rows: 160px 115px; }
+	.pgh-collage__main { grid-column: 1 / 3; grid-row: 1; }
+	.pgh-collage__badge { bottom: 8px; left: 8px; padding: 7px 11px; }
+	.pgh-share__btn { padding: 6px 10px; font-size: 0.74rem; }
+}
 
 /* ---------- CRO Badges, Ratings & Sticky Mobile CTA ---------- */
 .site-logo__img { height: 48px; width: auto; display: block; }

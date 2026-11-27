@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'PGH_VERSION', '1.1.0' );
+define( 'PGH_VERSION', '1.2.0' );
 define( 'PGH_DIR', get_template_directory() );
 define( 'PGH_URI', get_template_directory_uri() );
 
@@ -24,6 +24,25 @@ require_once PGH_DIR . '/inc/patterns.php';
  * Disable Rank Math sitemap caching so REST-published posts appear immediately.
  */
 add_filter( 'rank_math/sitemap/enable_caching', '__return_false' );
+
+/**
+ * Block self-pingbacks and exclude pingbacks from comment counts.
+ */
+add_action( 'pre_ping', function ( &$links ) {
+	$home = home_url();
+	foreach ( $links as $l => $link ) {
+		if ( 0 === strpos( $link, $home ) ) {
+			unset( $links[ $l ] );
+		}
+	}
+} );
+add_filter( 'get_comments_number', function ( $count, $post_id ) {
+	if ( ! is_admin() ) {
+		$real = get_comments( array( 'post_id' => $post_id, 'type' => 'comment', 'status' => 'approve', 'count' => true ) );
+		return (int) $real;
+	}
+	return $count;
+}, 10, 2 );
 
 /**
  * Theme setup.

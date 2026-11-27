@@ -141,13 +141,35 @@ function pgh_paw_svg( $class = '' ) {
  * Site logo: uploaded logo if set, otherwise the built-in paw + wordmark.
  */
 function pgh_site_logo( $reversed = true ) {
-	$img_file = $reversed ? 'logo-full-reversed.png' : 'logo-full.png';
 	printf(
-		'<a class="site-logo" href="%1$s" rel="home" aria-label="%2$s"><img class="site-logo__img" src="%3$s" alt="%2$s" height="48" /></a>',
+		'<a class="site-logo" href="%1$s" rel="home" aria-label="%2$s"><img class="site-logo__mark-img" src="%3$s" alt="" width="44" height="44" /><span class="site-logo__text">PawGadget<em>Hub</em></span></a>',
 		esc_url( home_url( '/' ) ),
 		esc_attr( get_bloginfo( 'name' ) ),
-		esc_url( PGH_URI . '/assets/img/' . $img_file )
+		esc_url( PGH_URI . '/assets/img/site-icon-512.png' )
 	);
+}
+
+/**
+ * Prominent social share bar for single articles.
+ */
+function pgh_share_bar( $position = 'top' ) {
+	$url   = rawurlencode( get_permalink() );
+	$title = rawurlencode( wp_strip_all_tags( get_the_title() ) );
+	$img   = rawurlencode( (string) get_the_post_thumbnail_url( get_the_ID(), 'large' ) );
+	?>
+	<div class="pgh-share pgh-share--<?php echo esc_attr( $position ); ?>" aria-label="<?php esc_attr_e( 'Share this guide', 'pawgadgethub' ); ?>">
+		<span class="pgh-share__label"><?php esc_html_e( 'Share:', 'pawgadgethub' ); ?></span>
+		<div class="pgh-share__btns">
+			<button type="button" class="pgh-share__btn pgh-share__btn--copy js-copy-link" data-url="<?php echo esc_url( get_permalink() ); ?>">
+				<?php esc_html_e( 'Copy Link', 'pawgadgethub' ); ?>
+			</button>
+			<a class="pgh-share__btn pgh-share__btn--wa" href="https://api.whatsapp.com/send?text=<?php echo esc_attr( $title . '%20' . $url ); ?>" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+			<a class="pgh-share__btn pgh-share__btn--x" href="https://twitter.com/intent/tweet?text=<?php echo esc_attr( $title ); ?>&amp;url=<?php echo esc_attr( $url ); ?>" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+			<a class="pgh-share__btn pgh-share__btn--fb" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( $url ); ?>" target="_blank" rel="noopener noreferrer">Facebook</a>
+			<a class="pgh-share__btn pgh-share__btn--pin" href="https://pinterest.com/pin/create/button/?url=<?php echo esc_attr( $url ); ?>&amp;media=<?php echo esc_attr( $img ); ?>&amp;description=<?php echo esc_attr( $title ); ?>" target="_blank" rel="noopener noreferrer">Pinterest</a>
+		</div>
+	</div>
+	<?php
 }
 
 /**

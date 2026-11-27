@@ -159,7 +159,7 @@ $total_posts = (int) wp_count_posts( 'post' )->publish;
 				<div class="pgh-pillar">
 					<span class="pgh-pillar__icon"><?php echo pgh_icon( 'flask' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></span>
 					<h3><?php esc_html_e( 'Real-world testing', 'pawgadgethub' ); ?></h3>
-					<p><?php esc_html_e( 'We evaluate app reliability, multi-pet interference, and real battery life — not just marketing claims.', 'pawgadgethub' ); ?></p>
+					<p><?php esc_html_e( 'We evaluate app reliability, multi-pet interference, and real battery life, not just marketing claims.', 'pawgadgethub' ); ?></p>
 				</div>
 				<div class="pgh-pillar">
 					<span class="pgh-pillar__icon"><?php echo pgh_icon( 'shield' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></span>

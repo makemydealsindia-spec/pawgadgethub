@@ -39,6 +39,8 @@ get_header();
 						</span>
 					</div>
 				</header>
+
+				<?php pgh_share_bar( 'top' ); ?>
 			</div>
 
 			<?php if ( has_post_thumbnail() ) : ?>
@@ -66,6 +68,8 @@ get_header();
 				<?php if ( get_the_tags() ) : ?>
 					<div class="pgh-tags"><?php the_tags( '', '', '' ); ?></div>
 				<?php endif; ?>
+
+				<?php pgh_share_bar( 'bottom' ); ?>
 
 				<aside class="pgh-authorbox">
 					<div class="pgh-authorbox__avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 72 ); // phpcs:ignore WordPress.Security.EscapeOutput ?></div>

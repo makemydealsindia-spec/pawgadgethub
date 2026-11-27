@@ -1,6 +1,6 @@
 /**
- * PawGadgetHub: tiny vanilla JS (no jQuery).
- * Mobile menu, search panel, header shadow.
+ * PawGadgetHub: lightweight vanilla JS (no jQuery).
+ * Mobile menu, live REST search, scroll-reveal animations, pet filter, copy-link share.
  */
 (function () {
 	'use strict';
@@ -47,17 +47,18 @@
 		if (e.key === 'Escape') {
 			setNav(false);
 			setSearch(false);
+			document.querySelectorAll('.pgh-live-results').forEach(function (box) {
+				box.setAttribute('hidden', '');
+			});
 		}
 	});
 
-	// Close the mobile menu when a link inside it is tapped.
 	if (nav) {
 		nav.addEventListener('click', function (e) {
 			if (e.target.closest && e.target.closest('a')) { setNav(false); }
 		});
 	}
 
-	// Shadow under the sticky header once the page scrolls.
 	if (header) {
 		var ticking = false;
 		var update = function () {
@@ -100,4 +101,100 @@
 			if (pet) { filterByPet(pet); }
 		});
 	});
+
+	// Live Search Results via WordPress REST API.
+	document.querySelectorAll('.pgh-search').forEach(function (form) {
+		var input = form.querySelector('.pgh-search__input');
+		if (!input) { return; }
+		form.style.position = 'relative';
+		form.style.overflow = 'visible';
+
+		var box = document.createElement('div');
+		box.className = 'pgh-live-results';
+		box.setAttribute('hidden', '');
+		form.appendChild(box);
+
+		var timer = null;
+		var controller = null;
+
+		input.addEventListener('input', function () {
+			var q = input.value.trim();
+			clearTimeout(timer);
+			if (q.length < 2) {
+				box.setAttribute('hidden', '');
+				box.innerHTML = '';
+				return;
+			}
+			timer = setTimeout(function () {
+				if (controller && controller.abort) { controller.abort(); }
+				controller = window.AbortController ? new AbortController() : null;
+				box.innerHTML = '<div class="pgh-live-results__msg">Searching guides...</div>';
+				box.removeAttribute('hidden');
+
+				var apiUrl = '/wp-json/wp/v2/posts?search=' + encodeURIComponent(q) + '&per_page=6&_embed';
+				fetch(apiUrl, controller ? { signal: controller.signal } : {})
+					.then(function (r) { return r.json(); })
+					.then(function (posts) {
+						if (!Array.isArray(posts) || !posts.length) {
+							box.innerHTML = '<div class="pgh-live-results__msg">No matching guides found. Press Enter for full search.</div>';
+							return;
+						}
+						var html = posts.map(function (p) {
+							var thumb = '';
+							try {
+								var media = p._embedded && p._embedded['wp:featuredmedia'] && p._embedded['wp:featuredmedia'][0];
+								if (media && media.source_url) { thumb = media.source_url; }
+							} catch (err) {}
+							var imgHtml = thumb ? '<img src="' + thumb + '" alt="" width="56" height="38" />' : '<span class="pgh-live-results__ph">&#128062;</span>';
+							return '<a class="pgh-live-results__item" href="' + p.link + '">' + imgHtml + '<span>' + p.title.rendered + '</span></a>';
+						}).join('');
+						box.innerHTML = html;
+					})
+					.catch(function (err) {
+						if (err && err.name === 'AbortError') { return; }
+						box.setAttribute('hidden', '');
+					});
+			}, 260);
+		});
+
+		document.addEventListener('click', function (e) {
+			if (!form.contains(e.target)) { box.setAttribute('hidden', ''); }
+		});
+	});
+
+	// Copy Link button in Social Share Bar.
+	document.querySelectorAll('.js-copy-link').forEach(function (btn) {
+		btn.addEventListener('click', function () {
+			var url = btn.getAttribute('data-url') || window.location.href;
+			if (navigator.clipboard && navigator.clipboard.writeText) {
+				navigator.clipboard.writeText(url).then(function () {
+					var orig = btn.textContent;
+					btn.textContent = 'Copied!';
+					btn.classList.add('is-copied');
+					setTimeout(function () {
+						btn.textContent = orig;
+						btn.classList.remove('is-copied');
+					}, 1800);
+				});
+			}
+		});
+	});
+
+	// Smooth Scroll-Reveal Animations.
+	var revealTargets = document.querySelectorAll('.pgh-catcard, .pgh-card, .pgh-pillar, .pgh-trustbar__item');
+	if ('IntersectionObserver' in window && revealTargets.length) {
+		var io = new IntersectionObserver(function (entries) {
+			entries.forEach(function (entry) {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('is-visible');
+					io.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+		revealTargets.forEach(function (el, idx) {
+			el.classList.add('pgh-reveal');
+			el.style.transitionDelay = ((idx % 4) * 55) + 'ms';
+			io.observe(el);
+		});
+	}
 })();
