@@ -24,7 +24,7 @@ get_header();
 					<?php pgh_category_chip(); ?>
 					<h1 class="pgh-article__title"><?php the_title(); ?></h1>
 					<div class="pgh-article__meta">
-						<span><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); // phpcs:ignore WordPress.Security.EscapeOutput ?> <?php the_author(); ?></span>
+						<span><img class="pgh-byline-avatar" src="<?php echo esc_url( PGH_URI . '/assets/img/site-icon-512.png' ); ?>" alt="" width="28" height="28" /> <?php the_author(); ?></span>
 						<span><?php echo pgh_icon( 'clock' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 							<?php
 							/* translators: %s: date */

@@ -662,6 +662,8 @@ a.page-numbers:hover { border-color: var(--pgh-teal); color: var(--pgh-teal); }
 .pgh-authorbox { display: flex; gap: 16px; align-items: flex-start; }
 .pgh-authorbox__avatar { flex: none; width: 56px; height: 56px; border-radius: 50%; background: #fff; border: 2px solid #fde3cf; padding: 3px; overflow: hidden; box-shadow: 0 2px 8px rgba(13, 74, 84, 0.08); }
 .pgh-authorbox__avatar img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 50%; }
+.pgh-byline-avatar { width: 28px; height: 28px; border-radius: 50%; background: #fff; padding: 2px; border: 1px solid #d7e5e7; object-fit: contain; display: block; }
+.pgh-newsletter .pgh-notice { color: #7c2d12 !important; background: #fff7ed !important; }
 @media (max-width: 600px) {
 	.pgh-authorbox { flex-direction: column; align-items: center; text-align: center; padding: 18px 16px; }
 	.pgh-article__title { font-size: 1.55rem; line-height: 1.18; }
