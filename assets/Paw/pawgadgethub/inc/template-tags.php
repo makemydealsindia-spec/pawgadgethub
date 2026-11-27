@@ -114,7 +114,7 @@ function pgh_paw_svg( $class = '' ) {
 /**
  * Site logo: uploaded logo if set, otherwise the built-in paw + wordmark.
  */
-function pgh_site_logo( $reversed = false ) {
+function pgh_site_logo( $reversed = true ) {
 	$img_file = $reversed ? 'logo-full-reversed.png' : 'logo-full.png';
 	printf(
 		'<a class="site-logo" href="%1$s" rel="home" aria-label="%2$s"><img class="site-logo__img" src="%3$s" alt="%2$s" height="48" /></a>',
