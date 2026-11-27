@@ -631,7 +631,7 @@
     "intent": "commercial",
     "search_volume_us": 1600,
     "difficulty": "Low (18)",
-    "status": "pending",
+    "status": "published",
     "post_type": "comparison",
     "reviewed_products": [
       {
@@ -650,7 +650,10 @@
         "affiliate_url": "https://link.amazon/B00Bz41in",
         "image_url": "https://pawgadgethub.com/wp-content/uploads/2026/11/petcube-cam-360.jpg"
       }
-    ]
+    ],
+    "post_id": 123,
+    "post_url": "https://pawgadgethub.com/furbo-360-vs-petcube-bites-2-comparison-review/",
+    "published_at": "2026-11-27T02:48:11.142469"
   },
   {
     "id": 17,
