@@ -198,4 +198,26 @@
 			io.observe(el);
 		});
 	}
+
+	// Responsive stacked card labels for comparison tables on tablet & mobile.
+	document.querySelectorAll('.pgh-table-wrap table').forEach(function (tbl) {
+		var headerRow = tbl.querySelector('thead tr') || tbl.querySelector('tr');
+		if (!headerRow) { return; }
+		var labels = [];
+		headerRow.querySelectorAll('th').forEach(function (th) {
+			labels.push(th.textContent.trim());
+		});
+		if (!labels.length) { return; }
+		if (!tbl.querySelector('thead')) {
+			headerRow.classList.add('pgh-table-head-row');
+		}
+		tbl.querySelectorAll('tbody tr, tr').forEach(function (tr) {
+			if (tr === headerRow) { return; }
+			tr.querySelectorAll('td').forEach(function (td, i) {
+				if (labels[i] && !td.getAttribute('data-label')) {
+					td.setAttribute('data-label', labels[i]);
+				}
+			});
+		});
+	});
 })();

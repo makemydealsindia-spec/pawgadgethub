@@ -407,7 +407,7 @@ Tone: Friendly, authoritative, practical, and highly trustworthy (Brian Dean SEO
 Language: American English (use 'behavior', 'color', 'vet', 'leash', 'crate', 'ounces', 'lbs', '$').
 
 Requirements:
-1. Word count: STRICTLY 1,800 to 2,400 words. Write comprehensive, thorough paragraphs (at least 300-400 words per product review and 350+ words for the Buyer's Guide). Do NOT write thin summaries.
+1. Word count: STRICTLY 1,800 to 2,400 words. Write comprehensive, thorough analysis using SHORT, SCANNABLE 2-to-3 sentence paragraphs max per <p> tag (never write long walls of text). Use bullet lists and subheadings generously for mobile readers.
 2. Structure & Visual Appearance (formatted in clean HTML using standard tags: <h2>, <h3>, <p>, <ul>, <li>, <table>, <strong>, <div>):
    - Engaging 150-200 word introduction addressing the real-world pet friction point and mentioning "{keyword}" naturally.
    - Styled "Quick Answer: Top Recommendations" Callout Box:

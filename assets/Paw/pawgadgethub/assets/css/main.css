@@ -583,6 +583,43 @@ a.page-numbers:hover { border-color: var(--pgh-teal); color: var(--pgh-teal); }
 	.site-logo__text { font-size: 1.25rem; }
 	.site-logo__mark-img { width: 38px; height: 38px; }
 }
+@media (max-width: 900px) {
+	/* Zero-scroll stacked cards for comparison tables on tablet & mobile */
+	.pgh-table-wrap { border: 0; background: transparent; overflow: visible; margin: 18px 0; }
+	.pgh-table-wrap table { min-width: 0; display: block; }
+	.pgh-table-wrap thead, .pgh-table-wrap tr.pgh-table-head-row { display: none; }
+	.pgh-table-wrap tbody { display: grid; gap: 14px; }
+	.pgh-table-wrap tr {
+		display: block; background: #fff; border: 1px solid var(--pgh-line); border-radius: 16px;
+		padding: 14px 16px; box-shadow: 0 2px 10px rgba(13, 74, 84, 0.06);
+	}
+	.pgh-table-wrap td {
+		display: flex; justify-content: space-between; align-items: center; gap: 12px;
+		padding: 8px 0; border-bottom: 1px solid var(--pgh-line); text-align: right; font-size: 0.9rem;
+	}
+	.pgh-table-wrap td::before {
+		content: attr(data-label); font-weight: 700; color: var(--pgh-muted); font-size: 0.75rem;
+		text-transform: uppercase; letter-spacing: 0.04em; text-align: left; flex-shrink: 0;
+	}
+	.pgh-table-wrap td:first-child {
+		display: block; text-align: left; font-size: 1.05rem; font-weight: 800; color: var(--pgh-navy);
+		padding-top: 0; padding-bottom: 10px; border-bottom: 2px solid var(--pgh-soft-teal);
+	}
+	.pgh-table-wrap td:first-child::before { display: none; }
+	.pgh-table-wrap td:last-child { border-bottom: 0; padding-top: 10px; padding-bottom: 2px; justify-content: flex-start; }
+	.pgh-table-wrap td:last-child::before { display: none; }
+	.pgh-table-wrap td:last-child a {
+		display: block; width: 100%; text-align: center; background: var(--pgh-gold); color: #111827 !important;
+		padding: 10px 14px; border-radius: 8px; text-decoration: none; font-weight: 700;
+	}
+
+	/* Scannable, breathable blog typography on tablet & mobile */
+	.entry-content { font-size: 0.98rem; line-height: 1.68; }
+	.entry-content p { margin-bottom: 1.25em; }
+	.entry-content h2 { font-size: 1.36rem; margin-top: 2em; padding-top: 1.15em; border-top: 1px solid var(--pgh-line); }
+	.entry-content h3 { font-size: 1.12rem; margin-top: 1.35em; }
+	.entry-content ul { background: var(--pgh-soft); padding: 14px 16px 14px 30px; border-radius: 12px; border: 1px solid #f2e8dc; }
+}
 @media (max-width: 600px) {
 	.pgh-hero__actions .pgh-btn { width: 100%; }
 	.pgh-collage { grid-template-columns: 1fr 1fr; grid-template-rows: 160px 115px; }

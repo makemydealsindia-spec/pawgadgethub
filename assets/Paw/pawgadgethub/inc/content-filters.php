@@ -78,9 +78,35 @@ function pgh_toc_filter( $content ) {
 		$content = $html . $content;
 	}
 
-	// Wrap tables for clean mobile horizontal scrolling & strip any em-dashes/en-dashes.
+	// Wrap tables for clean responsive cards & strip any em-dashes/en-dashes.
 	$content = preg_replace( '/(<table\b[^>]*>.*?<\/table>)/is', '<div class="pgh-table-wrap">$1</div>', $content );
 	$content = str_replace( array( '—', '–', '&mdash;', '&ndash;', '&#8212;', '&#8211;' ), array( ': ', '-', ': ', '-', ': ', '-' ), $content );
+
+	// Auto-split dense paragraphs (> 260 chars plain text and 4+ sentences) into crisp 2-sentence paragraphs for mobile readability.
+	$content = preg_replace_callback(
+		'/<p>(.*?)<\/p>/is',
+		function ( $m ) {
+			$inner = $m[1];
+			if ( false !== strpos( $inner, 'display:inline-block' ) || false !== strpos( $inner, '<img' ) ) {
+				return $m[0];
+			}
+			$plain = trim( wp_strip_all_tags( $inner ) );
+			if ( strlen( $plain ) < 260 ) {
+				return $m[0];
+			}
+			$parts = preg_split( '/(?<=[.!?])\s+(?=[A-Z])/', $inner );
+			if ( ! is_array( $parts ) || count( $parts ) < 4 ) {
+				return $m[0];
+			}
+			$chunks = array_chunk( $parts, 2 );
+			$out    = '';
+			foreach ( $chunks as $ch ) {
+				$out .= '<p>' . implode( ' ', $ch ) . '</p>' . "\n";
+			}
+			return $out;
+		},
+		$content
+	);
 
 	return $content;
 }
