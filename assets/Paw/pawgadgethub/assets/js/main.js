@@ -95,8 +95,9 @@
 		});
 	});
 	document.querySelectorAll('[data-jump-pet]').forEach(function (link) {
-		link.addEventListener('click', function () {
-			filterByPet(link.getAttribute('data-jump-pet'));
+		link.addEventListener('click', function (e) {
+			var pet = e.currentTarget.getAttribute('data-jump-pet');
+			if (pet) { filterByPet(pet); }
 		});
 	});
 })();
