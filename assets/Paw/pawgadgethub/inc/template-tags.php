@@ -156,17 +156,23 @@ function pgh_share_bar( $position = 'top' ) {
 	$url   = rawurlencode( get_permalink() );
 	$title = rawurlencode( wp_strip_all_tags( get_the_title() ) );
 	$img   = rawurlencode( (string) get_the_post_thumbnail_url( get_the_ID(), 'large' ) );
+
+	$svg_copy = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg>';
+	$svg_wa   = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.1 4.1 4.2-1.1a9.9 9.9 0 0 0 5.4 1.6h.01A9.93 9.93 0 0 0 22 11.7 9.93 9.93 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.3-1.95 1.38-.52.08-1.18.11-1.9-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5-4.38-5.15-4.58-.15-.2-1.23-1.64-1.23-3.13 0-1.49.78-2.22 1.06-2.52.28-.3.61-.38.81-.38h.58c.19 0 .44-.07.69.52.24.6.83 2.04.9 2.19.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.32.4-.45.53-.15.15-.31.32-.13.62.18.3.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.48 1.53.3.15.48.13.66-.08.18-.2.76-.88.96-1.18.2-.3.4-.25.68-.15.28.1 1.77.83 2.07.98.3.15.5.23.58.36.08.13.08.76-.16 1.44z"/></svg>';
+	$svg_x    = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26L22.82 21.75h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64z"/></svg>';
+	$svg_fb   = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.33-.04-1.56-.14-2.86-.14-2.72 0-4.64 1.66-4.64 4.7v2.8H7v4h3V22h4v-8.5z"/></svg>';
+	$svg_pin  = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.65 19.31c-.05-.79-.1-2 .02-2.86l1.2-5.08s-.3-.61-.3-1.51c0-1.42.82-2.48 1.85-2.48.87 0 1.29.65 1.29 1.44 0 .88-.56 2.19-.85 3.4-.24 1.02.51 1.85 1.52 1.85 1.82 0 3.22-1.92 3.22-4.69 0-2.45-1.76-4.17-4.28-4.17-2.92 0-4.63 2.19-4.63 4.45 0 .88.34 1.83.76 2.34.08.1.1.19.07.29l-.28 1.15c-.04.18-.15.22-.34.13-1.26-.59-2.05-2.43-2.05-3.91 0-3.18 2.31-6.11 6.67-6.11 3.5 0 6.22 2.49 6.22 5.83 0 3.48-2.19 6.28-5.24 6.28-1.02 0-1.99-.53-2.32-1.16l-.63 2.4c-.23.88-.85 1.98-1.26 2.65A10 10 0 1 0 12 2z"/></svg>';
 	?>
 	<div class="pgh-share pgh-share--<?php echo esc_attr( $position ); ?>" aria-label="<?php esc_attr_e( 'Share this guide', 'pawgadgethub' ); ?>">
 		<span class="pgh-share__label"><?php esc_html_e( 'Share:', 'pawgadgethub' ); ?></span>
 		<div class="pgh-share__btns">
 			<button type="button" class="pgh-share__btn pgh-share__btn--copy js-copy-link" data-url="<?php echo esc_url( get_permalink() ); ?>">
-				<?php esc_html_e( 'Copy Link', 'pawgadgethub' ); ?>
+				<?php echo $svg_copy; // phpcs:ignore WordPress.Security.EscapeOutput ?><span><?php esc_html_e( 'Copy Link', 'pawgadgethub' ); ?></span>
 			</button>
-			<a class="pgh-share__btn pgh-share__btn--wa" href="https://api.whatsapp.com/send?text=<?php echo esc_attr( $title . '%20' . $url ); ?>" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-			<a class="pgh-share__btn pgh-share__btn--x" href="https://twitter.com/intent/tweet?text=<?php echo esc_attr( $title ); ?>&amp;url=<?php echo esc_attr( $url ); ?>" target="_blank" rel="noopener noreferrer">X / Twitter</a>
-			<a class="pgh-share__btn pgh-share__btn--fb" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( $url ); ?>" target="_blank" rel="noopener noreferrer">Facebook</a>
-			<a class="pgh-share__btn pgh-share__btn--pin" href="https://pinterest.com/pin/create/button/?url=<?php echo esc_attr( $url ); ?>&amp;media=<?php echo esc_attr( $img ); ?>&amp;description=<?php echo esc_attr( $title ); ?>" target="_blank" rel="noopener noreferrer">Pinterest</a>
+			<a class="pgh-share__btn pgh-share__btn--wa" href="https://api.whatsapp.com/send?text=<?php echo esc_attr( $title . '%20' . $url ); ?>" target="_blank" rel="noopener noreferrer"><?php echo $svg_wa; // phpcs:ignore WordPress.Security.EscapeOutput ?><span>WhatsApp</span></a>
+			<a class="pgh-share__btn pgh-share__btn--x" href="https://twitter.com/intent/tweet?text=<?php echo esc_attr( $title ); ?>&amp;url=<?php echo esc_attr( $url ); ?>" target="_blank" rel="noopener noreferrer"><?php echo $svg_x; // phpcs:ignore WordPress.Security.EscapeOutput ?><span>X</span></a>
+			<a class="pgh-share__btn pgh-share__btn--fb" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( $url ); ?>" target="_blank" rel="noopener noreferrer"><?php echo $svg_fb; // phpcs:ignore WordPress.Security.EscapeOutput ?><span>Facebook</span></a>
+			<a class="pgh-share__btn pgh-share__btn--pin" href="https://pinterest.com/pin/create/button/?url=<?php echo esc_attr( $url ); ?>&amp;media=<?php echo esc_attr( $img ); ?>&amp;description=<?php echo esc_attr( $title ); ?>" target="_blank" rel="noopener noreferrer"><?php echo $svg_pin; // phpcs:ignore WordPress.Security.EscapeOutput ?><span>Pinterest</span></a>
 		</div>
 	</div>
 	<?php

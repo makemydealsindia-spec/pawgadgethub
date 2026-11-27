@@ -555,11 +555,12 @@ a.page-numbers:hover { border-color: var(--pgh-teal); color: var(--pgh-teal); }
 .pgh-share__label { font-family: var(--pgh-font-head); font-weight: 700; font-size: 0.85rem; color: var(--pgh-navy); }
 .pgh-share__btns { display: flex; flex-wrap: wrap; gap: 7px; }
 .pgh-share__btn {
-	display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 999px;
-	font-size: 0.78rem; font-weight: 700; text-decoration: none; border: 1px solid transparent; cursor: pointer;
+	display: inline-flex; align-items: center; gap: 6px; padding: 7px 13px; border-radius: 999px;
+	font-size: 0.78rem; font-weight: 700; text-decoration: none !important; color: #fff !important; border: 1px solid transparent; cursor: pointer;
 	transition: transform 0.15s, opacity 0.15s;
 }
-.pgh-share__btn:hover { transform: translateY(-1px); opacity: 0.92; }
+.pgh-share__btn svg { width: 14px; height: 14px; flex: none; fill: currentColor; display: block; }
+.pgh-share__btn:hover { transform: translateY(-1px); opacity: 0.92; color: #fff !important; }
 .pgh-share__btn--copy { background: var(--pgh-navy); color: #fff; }
 .pgh-share__btn--copy.is-copied { background: #16a34a; }
 .pgh-share__btn--wa { background: #25d366; color: #fff; }

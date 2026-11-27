@@ -168,11 +168,12 @@
 			var url = btn.getAttribute('data-url') || window.location.href;
 			if (navigator.clipboard && navigator.clipboard.writeText) {
 				navigator.clipboard.writeText(url).then(function () {
-					var orig = btn.textContent;
-					btn.textContent = 'Copied!';
+					var label = btn.querySelector('span') || btn;
+					var orig = label.textContent;
+					label.textContent = 'Copied!';
 					btn.classList.add('is-copied');
 					setTimeout(function () {
-						btn.textContent = orig;
+						label.textContent = orig;
 						btn.classList.remove('is-copied');
 					}, 1800);
 				});
