@@ -555,15 +555,17 @@ def generate_and_post_single(item_id=None, status="publish"):
 
     print(f"      Generated Title: {post_data['title']}")
     
-    # 2. Image Selection & Fetching (Zero API keys needed)
-    print(f"[3/6] Selecting royalty-free HD image for: \"{target_item['category']}\"...")
-    image_info = fetch_royalty_free_image(target_item["category"], target_item["keyword"])
-    
-    # 3. WordPress Media Upload
-    featured_media_id = None
-    if image_info:
-        print(f"      Downloading and uploading to WordPress Media Library...")
-        featured_media_id = upload_image_to_wordpress(image_info, config)
+    # 2. Image Selection & Fetching (Use pre-uploaded custom featured_media_id if set, else royalty-free pool)
+    featured_media_id = target_item.get("featured_media_id")
+    if featured_media_id:
+        print(f"[3/6] Using pre-uploaded custom featured image (Media ID: {featured_media_id})...")
+    else:
+        print(f"[3/6] Selecting royalty-free HD image for: \"{target_item['category']}\"...")
+        image_info = fetch_royalty_free_image(target_item["category"], target_item["keyword"])
+        # 3. WordPress Media Upload
+        if image_info:
+            print(f"      Downloading and uploading to WordPress Media Library...")
+            featured_media_id = upload_image_to_wordpress(image_info, config)
         
     # 4. WordPress Post Creation
     print(f"[4/6] Publishing post to WordPress ({status})...")
