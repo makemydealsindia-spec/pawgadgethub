@@ -8,8 +8,12 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+$pgh_text = strtolower( get_the_title() . ' ' . get_post_field( 'post_name', get_the_ID() ) );
+$pgh_is_dog = ( false !== strpos( $pgh_text, 'dog' ) || false !== strpos( $pgh_text, 'pup' ) || false !== strpos( $pgh_text, 'bark' ) || false !== strpos( $pgh_text, 'fence' ) );
+$pgh_is_cat = ( false !== strpos( $pgh_text, 'cat' ) || false !== strpos( $pgh_text, 'litter' ) || false !== strpos( $pgh_text, 'kitty' ) || false !== strpos( $pgh_text, 'feline' ) );
+$pgh_pet_type = ( $pgh_is_dog && $pgh_is_cat ) ? 'both' : ( $pgh_is_dog ? 'dog' : ( $pgh_is_cat ? 'cat' : 'both' ) );
 ?>
-<article <?php post_class( 'pgh-card' ); ?>>
+<article <?php post_class( 'pgh-card' ); ?> data-pet="<?php echo esc_attr( $pgh_pet_type ); ?>">
 	<a class="pgh-card__media" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
 		<?php
 		if ( has_post_thumbnail() ) {

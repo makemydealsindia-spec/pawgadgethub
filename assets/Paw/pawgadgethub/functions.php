@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'PGH_VERSION', '1.0.0' );
+define( 'PGH_VERSION', '1.1.0' );
 define( 'PGH_DIR', get_template_directory() );
 define( 'PGH_URI', get_template_directory_uri() );
 

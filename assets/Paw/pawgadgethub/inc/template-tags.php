@@ -16,30 +16,53 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function pgh_categories() {
 	return array(
-		'smart-feeders'   => array(
+		'smart-feeders'       => array(
 			'label' => __( 'Smart Feeders', 'pawgadgethub' ),
 			'icon'  => 'feeder',
-			'blurb' => __( 'Schedule meals, control portions, and end the 5 AM wake-ups.', 'pawgadgethub' ),
+			'tone'  => 'teal',
+			'blurb' => __( 'Schedule meals, control portions, and end 5 AM wake-ups.', 'pawgadgethub' ),
 		),
-		'gps-trackers'    => array(
+		'gps-trackers'        => array(
 			'label' => __( 'GPS & Trackers', 'pawgadgethub' ),
 			'icon'  => 'gps',
+			'tone'  => 'orange',
 			'blurb' => __( 'Keep escape artists and trail dogs safe, wherever they roam.', 'pawgadgethub' ),
 		),
-		'pet-cameras'     => array(
+		'pet-cameras'         => array(
 			'label' => __( 'Pet Cameras', 'pawgadgethub' ),
 			'icon'  => 'camera',
+			'tone'  => 'amber',
 			'blurb' => __( 'Check in, toss a treat, and ease separation anxiety.', 'pawgadgethub' ),
 		),
-		'litter-boxes'    => array(
+		'litter-boxes'        => array(
 			'label' => __( 'Self-Cleaning Litter', 'pawgadgethub' ),
 			'icon'  => 'litter',
+			'tone'  => 'teal',
 			'blurb' => __( 'Skip the scooping and keep apartment odor under control.', 'pawgadgethub' ),
 		),
-		'water-fountains' => array(
+		'water-fountains'     => array(
 			'label' => __( 'Water Fountains', 'pawgadgethub' ),
 			'icon'  => 'fountain',
+			'tone'  => 'sky',
 			'blurb' => __( 'Fresh, filtered, whisper-quiet water that pets love.', 'pawgadgethub' ),
+		),
+		'wireless-dog-fences' => array(
+			'label' => __( 'Wireless Dog Fences', 'pawgadgethub' ),
+			'icon'  => 'fence',
+			'tone'  => 'orange',
+			'blurb' => __( 'GPS and radar yard boundaries with zero buried wires.', 'pawgadgethub' ),
+		),
+		'pet-home-air-care'   => array(
+			'label' => __( 'Pet Home & Air Care', 'pawgadgethub' ),
+			'icon'  => 'air',
+			'tone'  => 'sky',
+			'blurb' => __( 'HEPA hair purifiers, heated cat beds, and paw washers.', 'pawgadgethub' ),
+		),
+		'smart-pet-toys'      => array(
+			'label' => __( 'Smart Toys & Backyard', 'pawgadgethub' ),
+			'icon'  => 'toy',
+			'tone'  => 'amber',
+			'blurb' => __( 'Automatic ball launchers and AI bird feeder cameras.', 'pawgadgethub' ),
 		),
 	);
 }
@@ -74,6 +97,9 @@ function pgh_icon( $name ) {
 		'camera'   => '<rect x="3" y="7" width="18" height="12" rx="3"/><circle cx="12" cy="13" r="3.2"/><path d="M8 7l1.2-2h5.6L16 7"/>',
 		'litter'   => '<path d="M4 20h16M6 20v-5a6 6 0 0 1 12 0v5"/><path d="M10 20v-3a2 2 0 0 1 4 0v3"/>',
 		'fountain' => '<path d="M12 3s6 6.2 6 10.5a6 6 0 0 1-12 0C6 9.2 12 3 12 3z"/><path d="M9.5 14a2.6 2.6 0 0 0 2.5 2.5"/>',
+		'fence'    => '<path d="M4 20V8l2-3 2 3v12M10 20V8l2-3 2 3v12M16 20V8l2-3 2 3v12M3 12h18M3 17h18"/>',
+		'air'      => '<path d="M3 8h11a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h8a2.5 2.5 0 1 1-2.5 2.5"/>',
+		'toy'      => '<circle cx="12" cy="12" r="8"/><path d="M8.5 5.2a9 9 0 0 1 7 13.6M15.5 5.2a9 9 0 0 0-7 13.6"/>',
 		'search'   => '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>',
 		'menu'     => '<path d="M4 7h16M4 12h16M4 17h16"/>',
 		'close'    => '<path d="M6 6l12 12M18 6L6 18"/>',
@@ -128,16 +154,30 @@ function pgh_site_logo( $reversed = true ) {
  * Primary menu fallback: the five silos.
  */
 function pgh_nav_fallback() {
+	$cats = pgh_categories();
+	$top_slugs = array( 'smart-feeders', 'gps-trackers', 'pet-cameras' );
 	echo '<ul class="menu">';
 	printf( '<li class="menu-item"><a href="%s">%s</a></li>', esc_url( home_url( '/' ) ), esc_html__( 'Home', 'pawgadgethub' ) );
-	foreach ( pgh_categories() as $slug => $cat ) {
-		printf(
-			'<li class="menu-item"><a href="%s">%s</a></li>',
-			esc_url( pgh_category_url( $slug ) ),
-			esc_html( $cat['label'] )
-		);
+	foreach ( $top_slugs as $slug ) {
+		if ( isset( $cats[ $slug ] ) ) {
+			printf(
+				'<li class="menu-item"><a href="%s">%s</a></li>',
+				esc_url( pgh_category_url( $slug ) ),
+				esc_html( $cats[ $slug ]['label'] )
+			);
+		}
 	}
-	echo '</ul>';
+	echo '<li class="menu-item menu-item-has-children"><a href="#categories">' . esc_html__( 'More Guides', 'pawgadgethub' ) . '</a><ul class="sub-menu">';
+	foreach ( $cats as $slug => $cat ) {
+		if ( ! in_array( $slug, $top_slugs, true ) ) {
+			printf(
+				'<li class="menu-item"><a href="%s">%s</a></li>',
+				esc_url( pgh_category_url( $slug ) ),
+				esc_html( $cat['label'] )
+			);
+		}
+	}
+	echo '</ul></li></ul>';
 }
 
 /**

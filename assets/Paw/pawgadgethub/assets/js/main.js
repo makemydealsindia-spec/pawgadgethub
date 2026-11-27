@@ -72,4 +72,31 @@
 		}, { passive: true });
 		update();
 	}
+
+	// Interactive "Browse by Pet" filter tabs on the homepage.
+	var petTabs = document.querySelectorAll('.pgh-pet-tab');
+	var petCards = document.querySelectorAll('#reviews .pgh-card');
+	function filterByPet(pet) {
+		if (!petTabs.length || !petCards.length) { return; }
+		petTabs.forEach(function (btn) {
+			var active = btn.getAttribute('data-filter') === pet;
+			btn.classList.toggle('is-active', active);
+			btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+		});
+		petCards.forEach(function (card) {
+			var type = card.getAttribute('data-pet') || 'both';
+			var show = pet === 'all' || type === 'both' || type === pet;
+			card.style.display = show ? '' : 'none';
+		});
+	}
+	petTabs.forEach(function (btn) {
+		btn.addEventListener('click', function () {
+			filterByPet(btn.getAttribute('data-filter'));
+		});
+	});
+	document.querySelectorAll('[data-jump-pet]').forEach(function (link) {
+		link.addEventListener('click', function () {
+			filterByPet(link.getAttribute('data-jump-pet'));
+		});
+	});
 })();
