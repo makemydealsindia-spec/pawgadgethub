@@ -647,7 +647,7 @@
     "intent": "commercial",
     "search_volume_us": 2100,
     "difficulty": "Low (19)",
-    "status": "pending",
+    "status": "published",
     "post_type": "roundup",
     "reviewed_products": [
       {
@@ -675,7 +675,10 @@
         "image_url": "https://pawgadgethub.com/wp-content/uploads/2026/11/furbo-360-dog-camera.jpg"
       }
     ],
-    "featured_media_id": 172
+    "featured_media_id": 172,
+    "post_id": 187,
+    "post_url": "https://pawgadgethub.com/best-pet-camera-that-works-without-a-paid-subscription/",
+    "published_at": "2026-11-27T14:43:49.644790"
   },
   {
     "id": 18,
