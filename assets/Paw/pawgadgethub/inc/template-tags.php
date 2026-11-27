@@ -114,16 +114,13 @@ function pgh_paw_svg( $class = '' ) {
 /**
  * Site logo: uploaded logo if set, otherwise the built-in paw + wordmark.
  */
-function pgh_site_logo() {
-	if ( has_custom_logo() ) {
-		the_custom_logo();
-		return;
-	}
+function pgh_site_logo( $reversed = false ) {
+	$img_file = $reversed ? 'logo-full-reversed.png' : 'logo-full.png';
 	printf(
-		'<a class="site-logo" href="%1$s" rel="home" aria-label="%2$s">%3$s<span class="site-logo__text">PawGadget<em>Hub</em></span></a>',
+		'<a class="site-logo" href="%1$s" rel="home" aria-label="%2$s"><img class="site-logo__img" src="%3$s" alt="%2$s" height="48" /></a>',
 		esc_url( home_url( '/' ) ),
 		esc_attr( get_bloginfo( 'name' ) ),
-		pgh_paw_svg( 'site-logo__mark' ) // phpcs:ignore WordPress.Security.EscapeOutput
+		esc_url( PGH_URI . '/assets/img/' . $img_file )
 	);
 }
 

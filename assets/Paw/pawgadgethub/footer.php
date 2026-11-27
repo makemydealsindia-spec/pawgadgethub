@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <footer class="site-footer">
 	<div class="container site-footer__grid">
 		<div class="site-footer__brand">
-			<?php pgh_site_logo(); ?>
+			<?php pgh_site_logo( true ); ?>
 			<p><?php echo esc_html( pgh_opt( 'footer_about' ) ); ?></p>
 		</div>
 

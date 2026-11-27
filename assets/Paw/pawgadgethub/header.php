@@ -14,6 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" sizes="512x512" href="<?php echo esc_url( PGH_URI . '/assets/img/site-icon-512.png' ); ?>">
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url( PGH_URI . '/assets/img/apple-touch-icon.png' ); ?>">
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

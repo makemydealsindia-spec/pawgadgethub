@@ -357,7 +357,10 @@ def build_prompt_for_keyword(item, amazon_tag, published_posts, config):
         "GPS & Trackers": "gps-trackers",
         "Pet Cameras": "pet-cameras",
         "Self-Cleaning Litter Boxes": "litter-boxes",
-        "Smart Water Fountains": "water-fountains"
+        "Smart Water Fountains": "water-fountains",
+        "Wireless Dog Fences": "wireless-dog-fences",
+        "Pet Home & Air Care": "pet-home-air-care",
+        "Smart Pet Toys & Backyard": "smart-pet-toys"
     }
     cat_slug = slug_map.get(category, "smart-feeders")
     internal_options.append(f"- Parent Category Hub: \"{category} Reviews & Guides\" -> {config['site_url'].rstrip('/')}/category/{cat_slug}/")
