@@ -409,9 +409,9 @@ Requirements:
    - Engaging 150-200 word introduction addressing the real-world pet friction point and mentioning "{keyword}" naturally.
    - Styled "Quick Answer: Top Recommendations" Callout Box:
      <div style="background:#f8fafc;border-left:4px solid #f59e0b;padding:18px 22px;margin:24px 0;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.06);"><strong>Quick Answer: Top Recommendations</strong><p style="margin:8px 0 0;">...</p></div>
-   - Styled Comparison Table (columns: Product, Best For, Standout Feature, Approx. Price, Amazon Check) with <thead> and <tbody>. Link product names and "Check Price &rarr;" using each product's exact Target Affiliate URL.
+   - Styled Comparison Table (columns: Product, Best For, Rating, Approx. Price, Amazon Check) with <thead> and <tbody>. Put `<span class="pgh-badge pgh-badge--top">Top Pick</span>` on the #1 product, `<span class="pgh-badge pgh-badge--value">Best Value</span>` on the best budget pick, and a realistic star rating `<span class="pgh-rating">&#9733;&#9733;&#9733;&#9733;&#9733; 4.8/5</span>`. Link product names and "Check Price &rarr;" using each product's exact Target Affiliate URL.
    - Detailed Product Review Sections (one <h2> per product from the list above):
-     * Immediately after the <h2>Product Name</h2>, if a Product Image URL is provided, embed:
+     * Immediately after the <h2>Product Name</h2>, include a rating line (`<p><span class="pgh-badge pgh-badge--top">Editor's Choice</span> <span class="pgh-rating">&#9733;&#9733;&#9733;&#9733;&#9733; 4.8/5</span></p>` for the #1 pick, or appropriate badge/rating) and if a Product Image URL is provided, embed:
        <div style="text-align:center;margin:20px 0 24px;padding:16px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;"><img src="PRODUCT_IMAGE_URL" alt="Product Name" style="max-height:280px;width:auto;max-width:100%;object-fit:contain;border-radius:8px;" /></div>
      * Key Specifications (<ul> bullets with concrete 2026 specs)
      * Why We Love It / Hands-On Impressions (detailed paragraph)
@@ -534,6 +534,21 @@ def generate_and_post_single(item_id=None, status="publish"):
             if faq_entities:
                 faq_schema = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq_entities}
                 post_data["content_html"] += f'\n<script type="application/ld+json">{json.dumps(faq_schema)}</script>'
+
+    # Append sticky mobile bottom CTA bar for #1 Top Pick
+    if target_item.get("reviewed_products"):
+        top_prod = target_item["reviewed_products"][0]
+        top_name = top_prod.get("name", "Top Pick")
+        top_url = top_prod.get("affiliate_url", "")
+        if top_url:
+            sticky_cta = (
+                f'\n<div class="pgh-sticky-cta">'
+                f'<div class="pgh-sticky-cta__info"><span class="pgh-sticky-cta__label">&#9733; Top Pick</span>'
+                f'<span class="pgh-sticky-cta__name">{top_name}</span></div>'
+                f'<a class="pgh-sticky-cta__btn" href="{top_url}" target="_blank" rel="nofollow noopener sponsored">Check Price &rarr;</a>'
+                f'</div>'
+            )
+            post_data["content_html"] += sticky_cta
 
     print(f"      Generated Title: {post_data['title']}")
     

@@ -39,8 +39,6 @@ get_header();
 						</span>
 					</div>
 				</header>
-
-				<?php pgh_disclosure_banner(); ?>
 			</div>
 
 			<?php if ( has_post_thumbnail() ) : ?>
@@ -81,6 +79,8 @@ get_header();
 						</p>
 					</div>
 				</aside>
+
+				<?php pgh_disclosure_banner(); ?>
 
 				<?php
 				if ( comments_open() || get_comments_number() ) {

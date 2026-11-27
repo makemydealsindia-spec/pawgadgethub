@@ -21,6 +21,11 @@ require_once PGH_DIR . '/inc/meta-boxes.php';
 require_once PGH_DIR . '/inc/patterns.php';
 
 /**
+ * Disable Rank Math sitemap caching so REST-published posts appear immediately.
+ */
+add_filter( 'rank_math/sitemap/enable_caching', '__return_false' );
+
+/**
  * Theme setup.
  */
 function pgh_setup() {
