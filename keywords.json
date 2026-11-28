@@ -688,7 +688,7 @@
     "intent": "commercial",
     "search_volume_us": 1900,
     "difficulty": "Low (15)",
-    "status": "pending",
+    "status": "published",
     "post_type": "roundup",
     "reviewed_products": [
       {
@@ -716,7 +716,10 @@
         "image_url": "https://pawgadgethub.com/wp-content/uploads/2026/11/blink-mini-2.jpg"
       }
     ],
-    "featured_media_id": 174
+    "featured_media_id": 174,
+    "post_id": 189,
+    "post_url": "https://pawgadgethub.com/best-budget-pet-camera-with-two-way-audio-under-50-dollars/",
+    "published_at": "2026-11-28T02:43:34.008835"
   },
   {
     "id": 19,
