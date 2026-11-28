@@ -729,7 +729,7 @@
     "intent": "commercial",
     "search_volume_us": 1200,
     "difficulty": "Very Low (14)",
-    "status": "pending",
+    "status": "published",
     "post_type": "roundup",
     "reviewed_products": [
       {
@@ -757,7 +757,10 @@
         "image_url": "https://pawgadgethub.com/wp-content/uploads/2026/11/furbo-360-dog-camera.jpg"
       }
     ],
-    "featured_media_id": 173
+    "featured_media_id": 173,
+    "post_id": 191,
+    "post_url": "https://pawgadgethub.com/moving-robot-pet-camera-with-wheels-for-cats-and-dogs/",
+    "published_at": "2026-11-28T14:37:04.821311"
   },
   {
     "id": 20,
